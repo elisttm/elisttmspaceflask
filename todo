@@ -1,0 +1,23 @@
+backend
+
+- turn all largely used directory links into variables
+- make error handler dynamic (work on only one template)
+
+
+frontend
+
+- make the pages look nicer
+- think of possible revamps for the sites overall style
+- use a different header
+- please for the love of god rename the texture pack
+
+- robots.txt and sitemap.xml would be pretty cool too
+
+
+https://www.robotstxt.org/robotstxt.html
+https://community.cloudflare.com/t/how-to-successfully-make-minecraft-dns-working/159706
+
+
+db.update(increment('count'), query.type == 'indexvisits')
+indexvisits = db.get(query.type == 'indexvisits')
+print(indexvisits['count'])
