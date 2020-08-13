@@ -1,21 +1,21 @@
 backend
 
-- turn all largely used directory links into variables
+~ turn all largely used directory links into variables
 - make error handler dynamic (work on only one template)
 
 
 frontend
 
-- make the pages look nicer
+~ make pages look nicer and be more consistent
 - think of possible revamps for the sites overall style
-- use a different header
 - please for the love of god rename the texture pack
 
-- robots.txt and sitemap.xml would be pretty cool too
+- 'about me' and 'contact' sections on index
 
 
-https://www.robotstxt.org/robotstxt.html
-https://community.cloudflare.com/t/how-to-successfully-make-minecraft-dns-working/159706
+extra notes/storage
+
+https://flask.palletsprojects.com/en/1.1.x/patterns/templateinheritance/
 
 
 db.update(increment('count'), query.type == 'indexvisits')

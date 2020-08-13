@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /static/robots.txt
+Allow: /static/sitemap.xml
+
+User-agent: Discordbot
+Allow: /static/images/
+
+Sitemap: https://www.elisttm.space/sitemap.xml
+Sitemap: https://www.elisttm.space/sitemap
