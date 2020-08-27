@@ -9,24 +9,24 @@
 	<meta property="google" content="notranslate">
 	<meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" src={{ a.favicon }} type='image/x-icon' />
-	<link rel="shortcut icon" href={{ a.favicon }}>
-	<link rel="stylesheet" href={{ a.css }} type="text/css" />
-	<script type="text/javascript" src={{ a.js }}></script>
+	<link rel="icon" href="{{ a.favicon }}"" type='image/x-icon' />
+	<link rel="shortcut icon" href="{{ a.favicon }}">
+	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
+	<script type="text/javascript" src="{{ a.js }}"></script>
 
 	<title>{{ a.t_prefix }}minecraft server{{ a.t_suffix }}</title>
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="elisttm">
 	<meta property="og:title" content="mc.elisttm.space">
 	<meta property="og:description" content="a very cool minecraft server">
-	<meta property="og:image" content={{ a.logo }}>
+	<meta property="og:image" content="{{ a.logo }}">
 </head>
 
 <body>
 
 	<div class="header">
 		<button onclick="toggleHead()">≡</button>
-		<a href="/" class="logo"><img src={{ a.logo }}/>elisttm</a>
+		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
       <div id="header-content" class="header-right">
         <a href="/">home</a>
 				<a href="/donors">donors</a>
@@ -40,36 +40,29 @@
 		<p>a {{ a.mc_version }} vanilla smp that i host, manage and develop.</p>
 		
 		<button onclick="window.open('{{ a.mc_dynmap }}')"> dynamic map </button>
-		<button onclick="window.location.href='{{ a.mc_analytics }}'"> analytics </button>
+		<button onclick="window.open('{{ a.mc_analytics }}')"> player analytics </button>
 
 	<br><br><hr width="50%">
 
   <h2>server rules</h2>
     <div class="list" width="100%"><ul class="list">
-
 			{% for rule in a.mc_rules %}
 				<li>{{ rule }}</li>
 			{% endfor %}
-		
 		</ul></div>
 
   <h2>server plugins + features</h2>
     <div class="list" width="100%"><ul class="list">
-			
 			{% for feature in a.mc_features %}
 				<li>{{ feature }}</li>
 			{% endfor %}
-		
 		</ul></div>
-
-	<br><br>
 
 	<h2>custom recipes</h2>
 		<style>.recipe_img {width: 200px; height: 120px}</style>
-
-		<img src="{{ a.images}}/recipes/1.png" class="recipe_img"/>
-		<img src="{{ a.images}}/recipes/2.png" class="recipe_img"/>
-		<img src="{{ a.images}}/recipes/3.png" class="recipe_img"/>
+			{% for recipe in a.mc_recipes %}
+				<img src="/static/images/recipes/{{ recipe }}.png" class="recipe_img" alt="custom {{ recipe }} recipe"/>
+			{% endfor %}
 
 </body>
 </html>

@@ -7,5 +7,5 @@ Allow: /static/sitemap.xml
 User-agent: Discordbot
 Allow: /static/images/
 
-Sitemap: https://www.elisttm.space/sitemap.xml
-Sitemap: https://www.elisttm.space/sitemap
+Sitemap: https://elisttm.space/sitemap.xml
+Sitemap: https://elisttm.space/static/sitemap.xml

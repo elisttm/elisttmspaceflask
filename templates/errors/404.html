@@ -5,10 +5,10 @@
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<meta property="google" content="notranslate"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" src={{ a.favicon }} type='image/x-icon' />
-	<link rel="shortcut icon" href={{ a.favicon }}>
-	<link rel="stylesheet" href={{ a.css }} type="text/css" />
-	<script src={{ a.js }} type="text/javascript"></script>
+	<link rel="icon" href="{{ a.favicon }}"" type='image/x-icon' />
+	<link rel="shortcut icon" href="{{ a.favicon }}">
+	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
+	<script type="text/javascript" src="{{ a.js }}"></script>
 
 	<title>{{ a.t_prefix }}404{{ a.t_suffix }}</title>
 	<meta property="og:url" content="https://elisttm.space/"/>
@@ -16,13 +16,13 @@
 	<meta property="og:site_name" content="elisttm"/>
 	<meta property="og:title" content="404 not found"/>
 	<meta property="og:description" content="the page you are looking for does not exist"/>
-	<meta property="og:image" content={{ a.logo }}/>
+	<meta property="og:image" content="{{ a.logo }}"/>
 </head>
 <body>
 
 <div class="header">
 		<button onclick="toggleHead()">≡</button>
-		<a href="/" class="logo"><img src={{ a.logo }}/>elisttm</a>
+		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
       <div id="header-content" class="header-right">
         <a href="/">home</a>
 				<a href="/donors">donors</a>

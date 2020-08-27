@@ -9,24 +9,24 @@
 	<meta property="google" content="notranslate">
 	<meta name="robots" content="noindex, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" src={{ a.favicon }} type='image/x-icon' />
-	<link rel="shortcut icon" href={{ a.favicon }}>
-	<link rel="stylesheet" href={{ a.css }} type="text/css" />
-	<script type="text/javascript" src={{ a.js }}></script>
+	<link rel="icon" href="{{ a.favicon }}"" type='image/x-icon' />
+	<link rel="shortcut icon" href="{{ a.favicon }}">
+	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
+	<script type="text/javascript" src="{{ a.js }}"></script>
 
 	<title>{{ a.t_prefix }}page name{{ a.t_suffix }}</title>
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="elisttm">
 	<meta property="og:title" content="page name">
 	<meta property="og:description" content="page descripton">
-	<meta property="og:image" content={{ a.logo }}>
+	<meta property="og:image" content="{{ a.logo }}">
 </head>
 
 <body>
 
 	<div class="header">
 		<button onclick="toggleHead()">≡</button>
-		<a href="/" class="logo"><img src={{ a.logo }}/>elisttm</a>
+		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
       <div id="header-content" class="header-right">
         <a href="/">home</a>
 				<a href="/donors">donors</a>
@@ -46,7 +46,7 @@
 		<b>bold<b>, 
 		<i>italic</i>, 
 		<u>underlined</u>, 
-		<a href={{ a.rickroll }}>hyperlink</a>
+		<a href="{{ a.rickroll }}">hyperlink</a>
 	</p>
 
   <button onclick="window.open('{{ a.rickroll }}')">button</button>

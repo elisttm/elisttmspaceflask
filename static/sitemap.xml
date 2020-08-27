@@ -5,12 +5,17 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://elisttm.space/trashbot</loc>
+		<changefreq>daily</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
 		<loc>https://elisttm.space/minecraft</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>https://elisttm.space/trashbot</loc>
+		<loc>https://elisttm.space/gmod</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.8</priority>
 	</url>
@@ -25,7 +30,7 @@
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>https://elisttm.space/style</loc>
+		<loc>https://elisttm.space/styles</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.2</priority>
 	</url>

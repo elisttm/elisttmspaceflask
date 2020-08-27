@@ -1,0 +1,24 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>funny cat</title>
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="elisttm">
+	<meta property="og:title" content="funny cat">
+	<meta property="og:description" content="a random cat image every time you refresh">
+	<meta property="og:image" content="{{ file }}">
+</head>
+
+<body>
+
+	<p align="center" style="margin-block-start:0px;margin-block-end:2px;">{{ file }}</p>
+
+{% if filetype_video != False %}
+	<video style="width:auto;height:95%;display:block;margin-left:auto;margin-right:auto;" align="center" controls><source src="{{ file }}" type="video/{{ filetype_video }}"></video>
+{% else %}
+	<img src="{{ file }}" style="width:auto;height:95%;display:block;margin-left:auto;margin-right:auto;"/>
+{% endif %}
+
+</body>
+</html>

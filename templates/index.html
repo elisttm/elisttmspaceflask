@@ -6,14 +6,14 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<meta property="google" content="notranslate"/>
+	<meta property="google" content="notranslate">
 	<meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="{{ a.keywords }}"/>
-	<link rel="icon" href={{ a.favicon }} type='image/x-icon' />
-	<link rel="shortcut icon" href={{ a.favicon }}>
-	<link rel="stylesheet" href={{ a.css }} type="text/css" />
-	<script type="text/javascript" src={{ a.js }}></script>
+	<link rel="icon" href="{{ a.favicon }}"" type='image/x-icon' />
+	<link rel="shortcut icon" href="{{ a.favicon }}">
+	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
+	<script type="text/javascript" src="{{ a.js }}"></script>
 
 	<title>{{ a.t_prefix }}home{{ a.t_suffix }}</title>
 	<meta property="og:type" content="website"/>
@@ -21,13 +21,13 @@
 	<meta property="og:site_name" content="elisttm"/>
 	<meta property="og:title" content="elisttm"/>
 	<meta property="og:description" content="eli's super cool website :D"/>
-	<meta property="og:image" content={{ a.logo }}/>
+	<meta property="og:image" content="{{ a.logo }}"/>
 </head>
 <body>
 	
 	<div class="header">
 		<button onclick="toggleHead()">≡</button>
-		<a href="/" class="logo"><img src={{ a.logo }}/>elisttm</a>
+		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
       <div id="header-content" class="header-right">
         <a href="/" class="active">home</a>
 				<a href="/donors">donors</a>
@@ -44,28 +44,32 @@
 			<p>if theres a page you cant find, use the <a href='/sitemap'>sitemap</a></p>
 		
 			<div class="sm-icons-list"><ul class="sm-icons">
-				<li><a href={{ a.twitter }} target="_blank"> <i class="sm sm-twitter"><img src="{{ a.logos }}/twitter.png"></i></a></li>
-				<li><a href={{ a.youtube }} target="_blank"> <i class="sm sm-youtube"><img src="{{ a.logos }}/youtube.png"></i></a></li>
-				<li><a href={{ a.steam }} target="_blank"> <i class="sm sm-steam"><img src="{{ a.logos }}/steam.png"></i></a></li>
-				<li><a href={{ a.github }} target="_blank"> <i class="sm sm-github"><img src="{{ a.logos }}/github.png"></i></a></li>
-				<li><a href={{ a.discord }} target="_blank"> <i class="sm sm-discord"><img src="{{ a.logos }}/discord.png"></i></a></li>
-				<li><a href={{ a.patreon }} target="_blank"> <i class="sm sm-patreon"><img src="{{ a.logos }}/patreon.png"></i></a></li>
+				{% for name, url in a.sm_buttons.items() %}
+					<li><a href="{{ url }}" target="_blank"> <i class="sm sm-{{ name }}"><img src="/static/images/logos/{{ name }}.png"></i></a></li>
+				{% endfor %}
 			</ul></div>
 		</div>
 
 <hr width="75%">
     
-  <h2>minecraft server</h2>
+	<h2>trashbot</h2>
+    <p>a simple discord.py bot with various features</p>
+
+	<button onclick="window.location.href='/trashbot'">more information</button>
+
+<br><br><hr width="60%">
+
+	<h2>minecraft server</h2>
     <p>a {{ a.mc_version }} vanilla smp server that i host, manage and develop</p>
   
 	<button onclick="window.location.href='/minecraft'">more information</button>
 
 <br><br><hr width="60%">
 
-	<h2>trashbot</h2>
-    <p>a simple discord.py bot with various features</p>
+	<h2>gmod server</h2>
+    <p>a pretty cool garrys mod server that i host and manage</p>
   
-	<button onclick="window.location.href='/trashbot'">more information</button>
+	<button onclick="window.location.href='/gmod'">more information</button>
 
 <br><br><hr width="60%">
 
@@ -80,7 +84,6 @@
     <p>some other useful links you might need or want to see</p>
 	
 	<button onclick="window.location.href='/styles'">styles page</button>
-	<button onclick="window.location.href='/gmod'">gmod server redirect</button>
 	<button onclick="window.location.href='/sitemap'">sitemap</button>
 
 </body>

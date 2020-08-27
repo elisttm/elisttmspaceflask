@@ -1,20 +1,20 @@
 import flask
 import waitress
-import tinydb
 import os
-from flask import Flask, render_template, send_from_directory, send_file, redirect, request
+import urllib
+from flask import Flask, render_template, send_from_directory, request, redirect
+from requests import get
 from waitress import serve
-from tinydb import TinyDB, Query
-from tinydb.operations import increment
 from data.constants import constants, pack_changelog
 
-app = Flask(__name__, static_folder='static', template_folder="templates") 
+app = Flask(__name__, 
+	static_folder='static', 
+	template_folder="templates"
+) 
 
-db = TinyDB('data/database.json')
-query = Query()
+a = constants()
 
 # 		========================
-
 
 # special case routes for root files
 
@@ -28,73 +28,84 @@ def static_from_root():
 # basic routes
 
 @app.route('/')
-@app.route('/home')
 def index(): 
-	return render_template('index.html', a = constants())
+	return render_template('index.html', a = a)
 
 @app.route('/sitemap')
 def sitemap(): 
-	return render_template('sitemap.html', a = constants())
+	return render_template('sitemap.html', a = a)
 
 @app.route('/minecraft')
 def minecraft(): 
-	return render_template('minecraft.html', a = constants())
+	return render_template('minecraft.html', a = a)
 
 @app.route('/trashbot')
 def trashbot(): 
-	return render_template('trashbot.html', a = constants())
+	return render_template('trashbot.html', a = a)
 
 @app.route('/pack')
 def pack(): 
-	return render_template('pack.html', a = constants())
+	return render_template('pack.html', a = a)
 
 @app.route('/pack/changelog')
 def packchangelog(): 
 	c = pack_changelog()
 	return c.changelog_page
 
+@app.route('/gmod')
+def gmod(): 
+	return render_template('gmod.html', a = a)
+
 @app.route('/donors')
 def donors(): 
-	return render_template('donors.html', a = constants())
+	return render_template('donors.html', a = a)
 
-@app.route('/style')
+@app.route('/styles')
 def style(): 
-	return render_template('style.html', a = constants())
+	return render_template('style.html', a = a)
 
 @app.route('/funny')
 def funny(): 
 	funnyarg = request.args.get('f')
-	return render_template('extra/funny.html', funnyarg = funnyarg, a = constants())
+	return render_template('extra/funny.html', funnyarg = funnyarg, a = a)
 
 @app.route('/gmodload')
 def gmodload(): 
-	return render_template('extra/gmodload.html', a = constants())
+	return render_template('extra/gmodload.html', a = a)
+
+@app.route('/tf2motd')
+def tf2motd(): 
+	return render_template('extra/tf2motd.html', a = a)
 
 
-# routes to redirect templates
+# routes to redirects and redirect templates
 
-@app.route('/gmod')
+@app.route('/gmodsrv')
 def redirect_gmod(): 
-	return render_template('redirects/gmod.html', a = constants())
+	return render_template('redirects/gmodsrv.html', a = a)
 
-@app.route('/raymond')
-def redirect_raymond(): 
-	return render_template('redirects/raymond.html', a = constants())
+@app.route('/rhc')
+def redirect_rhc(): 
+	return render_template('redirects/rhc.html', a = a)
+
+@app.route('/trashbot/commands')
+def redirect_trashbot_cmds():
+  return get(a.trashbot_cmds).content
 
 
 # routes to error templates
 
 @app.errorhandler(403)
 def forbidden(error):
-	return render_template('errors/403.html', error = error, a = constants()), 403
+	return render_template('errors/403.html', error = error, a = a), 403
 
 @app.errorhandler(404)
 def page_not_found(error):
-	return render_template('errors/404.html', error = error, a = constants()), 404
+	return render_template('errors/404.html', error = error, a = a), 404
 
 @app.errorhandler(500)
 def internal_server(error):
-	return render_template('errors/500.html', error = error, a = constants()), 500
+	return render_template('errors/500.html', error = error, a = a), 500
 
 
 # 		========================

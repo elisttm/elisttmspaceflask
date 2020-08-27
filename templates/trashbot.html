@@ -9,24 +9,24 @@
 	<meta property="google" content="notranslate">
 	<meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" src={{ a.favicon }} type='image/x-icon' />
-	<link rel="shortcut icon" href={{ a.favicon }}>
-	<link rel="stylesheet" href={{ a.css }} type="text/css" />
-	<script type="text/javascript" src={{ a.js }}></script>
+	<link rel="icon" src="{{ a.favicon }}" type='image/x-icon' />
+	<link rel="shortcut icon" href="{{ a.favicon }}">
+	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
+	<script type="text/javascript" src="{{ a.js }}"></script>
 
 	<title>{{ a.t_prefix }}trashbot{{ a.t_suffix }}</title>
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="elisttm">
 	<meta property="og:title" content="trashbot">
 	<meta property="og:description" content="a pretty cool discord bot">
-	<meta property="og:image" content={{ a.logo }}>
+	<meta property="og:image" content="{{ a.logo }}">
 </head>
 
 <body>
 
 	<div class="header">
 		<button onclick="toggleHead()">≡</button>
-		<a href="/" class="logo"><img src={{ a.logo }}/>elisttm</a>
+		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
       <div id="header-content" class="header-right">
         <a href="/">home</a>
 				<a href="/donors">donors</a>
@@ -44,6 +44,7 @@
 	<button onclick="window.open('{{ a.trashbot_invite }}')">invite to a server</button>
 	<button onclick="window.open('{{ a.trashbot_github }}')"> source code </button>
 	<button onclick="window.open('{{ a.trashbot_cmds }}')"> list of commands </button>
+	<button onclick="window.open('{{ a.trashbot_tags }}')"> list of tags </button>
 
 <br><br>
 	<iframe src={{ a.trashbot_cmds }} class="trashbot_iframe" name="trashbot status" scrolling="no"></iframe>
@@ -52,11 +53,9 @@
   
   <h2>what features does it have?</h2>
     <div style="" class="list" width="100%"><ul class="list">
-
 			{% for feature in a.trashbot_features %}
 				<li>{{ feature }}</li>
 			{% endfor %}
-		
 		</ul></div>
 
 </body>
