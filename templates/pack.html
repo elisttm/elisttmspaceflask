@@ -49,24 +49,24 @@
 
 <br><hr width="65%"><br>
   
-  <h2>current version: {{ a.pack_version }}</h2>
+  <h2>current version: {{ mcpk.version }}</h2>
     <p><st>for versions 1.8.x, use only the base pack.<br>for any versions 1.14 and above, use both</st></p>
 
   <h3>download links:</h3>
-    <button onclick="window.open('{{ a.pack_base }}','_blank')"> base pack </button>
-    <button onclick="window.open('{{ a.pack_overlay }}','_blank')">1.14+ overlay</button>
+    <button onclick="window.open('{{ mcpk.base }}','_blank')"> base pack </button>
+    <button onclick="window.open('{{ mcpk.overlay }}','_blank')">1.14+ overlay</button>
   
 <br><br><hr width="65%"><br>
 
   <h3>features</h3>
 	<div class="list" width="75%"><ul>
-			{% for feature in a.pack_features %}
+			{% for feature in mcpk.features %}
 				<li>{{ feature }}</li>
 			{% endfor %}
   </ul></div>
 
   <h2>changelog</h2>
-   <iframe src="/pack/changelog" class="pack_iframe" name="pack changelog"></iframe>
+   <iframe src="/pack/changelog" style="border:1px;border-color:#333;width:75%;height:300px" name="pack changelog"></iframe>
 
 </body>
 

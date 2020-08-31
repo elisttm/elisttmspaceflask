@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<!-- 
+	this site was made by @elisttm and uses a flask backend
+-->
+
 <html lang="en-US">
 <head>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172482872-1"></script>
@@ -44,7 +49,7 @@
 			<p>if theres a page you cant find, use the <a href='/sitemap'>sitemap</a></p>
 		
 			<div class="sm-icons-list"><ul class="sm-icons">
-				{% for name, url in a.sm_buttons.items() %}
+				{% for name, url in sm_buttons.items() %}
 					<li><a href="{{ url }}" target="_blank"> <i class="sm sm-{{ name }}"><img src="/static/images/logos/{{ name }}.png"></i></a></li>
 				{% endfor %}
 			</ul></div>
@@ -60,7 +65,7 @@
 <br><br><hr width="60%">
 
 	<h2>minecraft server</h2>
-    <p>a {{ a.mc_version }} vanilla smp server that i host, manage and develop</p>
+    <p>a {{ mcstats['version'] }} vanilla smp server that i host, manage and develop</p>
   
 	<button onclick="window.location.href='/minecraft'">more information</button>
 

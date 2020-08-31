@@ -45,14 +45,14 @@
 
   <h2>server rules</h2>
     <div class="list" width="100%"><ul class="list">
-			{% for rule in a.gmod_rules %}
+			{% for rule in gm.rules %}
 				<li>{{ rule }}</li>
 			{% endfor %}
 		</ul></div>
 
   <h2>server workshop collections</h2>
     <div class="list" width="100%"><ul class="list">
-			{% for collection, url in a.gmod_collections.items() %}
+			{% for collection, url in gm.collections.items() %}
 				<li><a href="{{ url }}">{{ collection }}</a></li>
 			{% endfor %}
 		</ul></div>

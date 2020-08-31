@@ -10,12 +10,12 @@
 	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
 	<script type="text/javascript" src="{{ a.js }}"></script>
 
-	<title>{{ a.t_prefix }}404{{ a.t_suffix }}</title>
+	<title>{{ a.t_prefix }}{{ error_name }}{{ a.t_suffix }}</title>
 	<meta property="og:url" content="https://elisttm.space/"/>
 	<meta property="og:type" content="website"/>
 	<meta property="og:site_name" content="elisttm"/>
-	<meta property="og:title" content="404 not found"/>
-	<meta property="og:description" content="the page you are looking for does not exist"/>
+	<meta property="og:title" content="{{ error_name }}"/>
+	<meta property="og:description" content="{{ error }}"/>
 	<meta property="og:image" content="{{ a.logo }}"/>
 </head>
 <body>
@@ -32,8 +32,10 @@
 		</div>
 	<br>
 
-	<h1>404 not found</h1>
-		<p>{{ error }}</p>
+	<br><br>
+
+	<h1>{{ error_name }}</h1>
+		<h3>{{ error }}</h3>
 
 </body>
 </head>

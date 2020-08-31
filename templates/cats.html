@@ -1,24 +1,63 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172482872-1"></script>
+	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-172482872-1');</script>
+
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta property="google" content="notranslate">
+	<meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>funny cat</title>
+	<link rel="icon" href="{{ a.favicon }}"" type='image/x-icon' />
+	<link rel="shortcut icon" href="{{ a.favicon }}">
+	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
+	<script type="text/javascript" src="{{ a.js }}"></script>
+
+	<title>{{ a.t_prefix }}random cat page{{ a.t_suffix }}</title>
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="elisttm">
-	<meta property="og:title" content="funny cat">
-	<meta property="og:description" content="a random cat image every time you refresh">
-	<meta property="og:image" content="{{ file }}">
+	<meta property="og:title" content="garrys mod server">
+	<meta property="og:description" content="a pretty cool gmod server">
+	<meta property="og:image" content="{{ a.logo }}">
 </head>
 
 <body>
 
-	<p align="center" style="margin-block-start:0px;margin-block-end:2px;">{{ file }}</p>
+	<div class="header">
+		<button onclick="toggleHead()">≡</button>
+		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
+      <div id="header-content" class="header-right">
+        <a href="/">home</a>
+				<a href="/donors">donors</a>
+				<a href="/minecraft">mc server</a>
+        <a href="/trashbot">trashbot</a>
+    	</div>
+		</div>
+  <br>
 
-{% if filetype_video != False %}
-	<video style="width:auto;height:95%;display:block;margin-left:auto;margin-right:auto;" align="center" controls><source src="{{ file }}" type="video/{{ filetype_video }}"></video>
-{% else %}
-	<img src="{{ file }}" style="width:auto;height:95%;display:block;margin-left:auto;margin-right:auto;"/>
-{% endif %}
+  <h1>random cat image site</h1>
+		<p>a simple flask site that i host myself that gives a random cat on each page load</p>
+		
+		<!-- this uses urllib to get back the http status of {{ cat_url }} -->
+		{% if status == 200 %}
+			<button onclick="window.open('{{ cat_url }}')"> cat page <br> (code {{ status }}: the site is currently up!) </button>
+		{% else %}
+			<button onclick="window.open('{{ cat_url }}')"> cat page <br> (code {{ status }}: site is down or there was an error making a request to the server) </button>
+		{% endif %}
+
+	<br><br><hr width="50%">
+
+  <h2>how it works</h2>
+    <p style="line-height:1.75;text-align:left;padding: 0 20% 0 20%;">
+			there are 2 main pages you can use, <a href="{{ cat_url }}random/" target="_blank">/random</a> and <a href="{{ cat_url }}api/" target="_blank">/api</a><br>
+			<a href="{{ cat_url }}random/" target="_blank">/random</a> gets a random file and displays its path and contents<br>
+			<a href="{{ cat_url }}api/" target="_blank">/api</a> gets a random file and returns only its url to be used in some kind of rest api<br>
+			optionally, you can supply the name of a valid directory (i.e. <a href="{{ cat_url }}random/floppa" target="_blank">/random/floppa</a>) to only get files from it</br>
+			valid directory names can be found on the randomcat <a href="{{ cat_url }}" target="_blank">index page</a> or via <a href="{{ cat_url }}directories" target="_blank">/directories</a>
+		</p>
+
+		</ul></div>
 
 </body>
 </html>

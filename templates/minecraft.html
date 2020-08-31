@@ -37,32 +37,43 @@
   <br>
 
   <h1>mc.elisttm.space</h1>
-		<p>a {{ a.mc_version }} vanilla smp that i host, manage and develop.</p>
+		<p>
+			a {{ mc.version }} vanilla smp that i host, manage and develop.<br>
+			<st>
+			{% if mcstats['online'] == True %}
+				the server is currently <b>online</b> with <b>{{ mcstats['players']['online'] }}</b> players
+			{% else %}
+				the server is currently <b>offline</b>
+			{% endif %}
+			</st>
+		</p>
 		
-		<button onclick="window.open('{{ a.mc_dynmap }}')"> dynamic map </button>
-		<button onclick="window.open('{{ a.mc_analytics }}')"> player analytics </button>
+		<button onclick="window.open('{{ mc.dynmap }}')"> dynamic map </button>
+		<button onclick="window.open('{{ mc.analytics }}')"> player analytics </button>
 
 	<br><br><hr width="50%">
 
   <h2>server rules</h2>
     <div class="list" width="100%"><ul class="list">
-			{% for rule in a.mc_rules %}
+			{% for rule in mc.rules %}
 				<li>{{ rule }}</li>
 			{% endfor %}
 		</ul></div>
 
   <h2>server plugins + features</h2>
     <div class="list" width="100%"><ul class="list">
-			{% for feature in a.mc_features %}
+			{% for feature in mc.features %}
 				<li>{{ feature }}</li>
 			{% endfor %}
 		</ul></div>
 
 	<h2>custom recipes</h2>
 		<style>.recipe_img {width: 200px; height: 120px}</style>
-			{% for recipe in a.mc_recipes %}
+			{% for recipe in mc.recipes %}
 				<img src="/static/images/recipes/{{ recipe }}.png" class="recipe_img" alt="custom {{ recipe }} recipe"/>
 			{% endfor %}
+
+	<br><h5>for all basic info about the server, click <a href="/minecraft/info">here</a><h5>
 
 </body>
 </html>
