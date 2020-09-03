@@ -1,6 +1,5 @@
 from __main__ import app, flask, a
-import urllib
-import urllib.request
+import urllib, urllib.request
 
 # 		========================
 

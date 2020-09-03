@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block meta_robots %}noindex, follow{% endblock %}
+{% block page_title %}yeah{% endblock %}
+{% block og_title %}important{% endblock %}
+{% block og_desc %}very important page{% endblock %}
+
+{% block content %}
+	
+	<br><br><br>
+
+	{% if subpage == 'tommy' %}
+		<img style="width:50%;height:auto;" src="/static/images/tommy.jpg"/>
+	
+	{% elif subpage == 0 %}
+		<img style="width:50%;height:auto;" src="/static/images/wafflefries.gif"/>
+	
+	{% else %}
+		<p>hii</p>
+	
+	{% endif %}
+
+{% endblock %}

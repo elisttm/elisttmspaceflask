@@ -1,46 +1,14 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<!-- 
-	this site was made by @elisttm and uses a flask backend
--->
+{% block page_title %}home{% endblock %}
+{% block og_title %}elisttm{% endblock %}
+{% block og_desc %}eli's super cool website :D{% endblock %}
 
-<html lang="en-US">
-<head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172482872-1"></script>
-	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-172482872-1');</script>
+{% block head %}
+<meta name="keywords" content="{{ a.keywords }}">
+{% endblock %}
 
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<meta property="google" content="notranslate">
-	<meta name="robots" content="index, follow">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keywords" content="{{ a.keywords }}"/>
-	<link rel="icon" href="{{ a.favicon }}"" type='image/x-icon' />
-	<link rel="shortcut icon" href="{{ a.favicon }}">
-	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
-	<script type="text/javascript" src="{{ a.js }}"></script>
-
-	<title>{{ a.t_prefix }}home{{ a.t_suffix }}</title>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="https://elisttm.space/"/>
-	<meta property="og:site_name" content="elisttm"/>
-	<meta property="og:title" content="elisttm"/>
-	<meta property="og:description" content="eli's super cool website :D"/>
-	<meta property="og:image" content="{{ a.logo }}"/>
-</head>
-<body>
-	
-	<div class="header">
-		<button onclick="toggleHead()">≡</button>
-		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
-      <div id="header-content" class="header-right">
-        <a href="/" class="active">home</a>
-				<a href="/donors">donors</a>
-        <a href="/minecraft">mc server</a>
-				<a href="/trashbot">trashbot</a>
-      </div>
-		</div>
-	<br>
+{% block content %}
 
   <h1>welcome!</h1>
     <div class="content">
@@ -65,7 +33,7 @@
 <br><br><hr width="60%">
 
 	<h2>minecraft server</h2>
-    <p>a {{ mcstats['version'] }} vanilla smp server that i host, manage and develop</p>
+    <p>a 1.16.2 vanilla smp server that i host, manage and develop</p>
   
 	<button onclick="window.location.href='/minecraft'">more information</button>
 
@@ -91,6 +59,4 @@
 	<button onclick="window.location.href='/styles'">styles page</button>
 	<button onclick="window.location.href='/sitemap'">sitemap</button>
 
-</body>
-</html>
-
+{% endblock %}

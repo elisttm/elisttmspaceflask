@@ -2,6 +2,8 @@ from __main__ import app, flask, a, get_mcstats
 
 # 		========================
 
+keywords = "elisttm, elijahsttm, elijah the trash man, creeperstorm75, trashbot"
+
 sm_buttons = {
 	'twitter': a.twitter,
 	'youtube': a.youtube,
@@ -15,5 +17,5 @@ sm_buttons = {
 
 @app.route('/')
 def index(): 
-	mcstats = get_mcstats()
-	return flask.render_template('index.html', mcstats = mcstats, sm_buttons = sm_buttons, a = a, )
+	print("elisttm.space" + flask.request.path)
+	return flask.render_template('index.html', sm_buttons = sm_buttons, a = a, )

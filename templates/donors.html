@@ -1,40 +1,10 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172482872-1"></script>
-	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-172482872-1');</script>
+{% extends "base.html" %}
 
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<meta property="google" content="notranslate">
-	<meta name="robots" content="index, follow">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="{{ a.favicon }}"" type='image/x-icon' />
-	<link rel="shortcut icon" href="{{ a.favicon }}">
-	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
-	<script type="text/javascript" src="{{ a.js }}"></script>
+{% block page_title %}donors{% endblock %}
+{% block og_title %}donators{% endblock %}
+{% block og_desc %}a list of awesome people who have given me money{% endblock %}
 
-	<title>{{ a.t_prefix }}donors{{ a.t_suffix }}</title>
-	<meta property="og:type" content="website">
-	<meta property="og:site_name" content="elisttm">
-	<meta property="og:title" content="donators">
-	<meta property="og:description" content="a list of awesome people">
-	<meta property="og:image" content="{{ a.logo }}">
-</head>
-
-<body>
-
-	<div class="header">
-		<button onclick="toggleHead()">≡</button>
-		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
-      <div id="header-content" class="header-right">
-        <a href="/">home</a>
-				<a href="/donors" class="active">donors</a>
-				<a href="/minecraft">mc server</a>
-        <a href="/trashbot">trashbot</a>
-    	</div>
-		</div>
-  <br>
+{% block content %}
 
   <h1>wall of donors</h1>
 		<p>here is a list of people who have graciously donated to me via patreon or other services</p>
@@ -50,5 +20,4 @@
 		{% endfor %}
 	</h2>
 
-</body>
-</html>
+{% endblock %}

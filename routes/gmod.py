@@ -4,6 +4,8 @@ from __main__ import app, flask, a
 
 class gm():
 
+	redirect = "steam://connect/play.elisttm.space/chungus"
+
 	rules = (
 		"respect the people playing on the server",
 		"dont crash the server",

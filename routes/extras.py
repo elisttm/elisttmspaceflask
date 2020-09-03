@@ -8,12 +8,18 @@ def sitemap():
 
 @app.route('/styles')
 def style(): 
-	return flask.render_template('style.html', a = a)
+	return flask.render_template('style.html', no_analytics = True, rickroll = "https://www.youtube.com/watch?v=dQw4w9WgXcQ", a = a)
 
-@app.route('/funny')
-def funny(): 
-	funnyarg = flask.request.args.get('f')
-	return flask.render_template('extra/funny.html', funnyarg = funnyarg, a = a)
+#			-----  FUNNY  -----
+
+@app.route('/lol', defaults={'subpage': None})
+@app.route('/lol/<subpage>')
+def tags(subpage):
+	if not subpage:
+		subpage = 0
+	return flask.render_template('yeah.html', subpage = subpage, a = a)
+
+#			-----  LOADING SCREENS  -----
 
 @app.route('/gmodload')
 def extra_gmodload(): 

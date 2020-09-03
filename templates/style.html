@@ -1,41 +1,12 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172482872-1"></script>
-	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-172482872-1');</script>
+{% extends "base.html" %}
 
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<meta property="google" content="notranslate">
-	<meta name="robots" content="noindex, follow">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="{{ a.favicon }}"" type='image/x-icon' />
-	<link rel="shortcut icon" href="{{ a.favicon }}">
-	<link rel="stylesheet" href="{{ a.css }}" type="text/css" />
-	<script type="text/javascript" src="{{ a.js }}"></script>
+{% block meta_robots %}noindex, follow{% endblock %}
+{% block page_title %}page title{% endblock %}
+{% block og_title %}page name{% endblock %}
+{% block og_desc %}page description{% endblock %}
 
-	<title>{{ a.t_prefix }}page name{{ a.t_suffix }}</title>
-	<meta property="og:type" content="website">
-	<meta property="og:site_name" content="elisttm">
-	<meta property="og:title" content="page name">
-	<meta property="og:description" content="page descripton">
-	<meta property="og:image" content="{{ a.logo }}">
-</head>
+{% block content %}
 
-<body>
-
-	<div class="header">
-		<button onclick="toggleHead()">≡</button>
-		<a href="/" class="logo"><img src="{{ a.logo }}"/>elisttm</a>
-      <div id="header-content" class="header-right">
-        <a href="/">home</a>
-				<a href="/donors">donors</a>
-				<a href="/minecraft">mc server</a>
-				<a href="/trashbot">trashbot</a>
-    	</div>
-		</div>
-  <br>
-	
   <h1>header 1</h1>
   <h2>header 2</h2>
   <h3>header 3</h3>
@@ -46,10 +17,10 @@
 		<b>bold<b>, 
 		<i>italic</i>, 
 		<u>underlined</u>, 
-		<a href="{{ a.rickroll }}">hyperlink</a>
+		<a href="{{ rickroll }}">hyperlink</a>
 	</p>
 
-  <button onclick="window.open('{{ a.rickroll }}')">button</button>
+  <button onclick="window.open('{{ rickroll }}')">button</button>
 
 	<ul class="list">
 		<li>unordered list</li>
@@ -61,5 +32,4 @@
 		<li>etc etc etc</li>
 	</ol>
 
-</body>
-</html>
+{% endblock %}

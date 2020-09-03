@@ -16,14 +16,15 @@ class constants():
 	patreon = "https://www.patreon.com/elisttm"
 	paypal = "https://paypal.me/thetrashman"
 
-	rickroll = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-
-	gmod_redirect = "steam://connect/play.elisttm.space/chungus"
-
 	t_prefix = ""
 	t_suffix = " | elisttm"
 
-	keywords = "elisttm, elijahsttm, elijah the trash man, creeperstorm"
+	header_items = {
+		'/': 'home',
+		'/donors/': 'donors',
+		'/minecraft': 'mc server',
+		'/trashbot': 'trashbot',
+	}
 
 	pages = (
 		"https://elisttm.space/",

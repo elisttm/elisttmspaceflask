@@ -3,8 +3,8 @@ from __main__ import app, flask, a
 # 		========================
 
 donor_list = (
-	"($10) Tao Scree", 
-	"($2) SoFluffer"
+	"($20) Tao Scree", 
+	"($3) SoFluffer"
 )
 
 # 		========================
