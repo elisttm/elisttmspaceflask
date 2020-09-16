@@ -1,6 +1,10 @@
-from __main__ import app, flask, a, get_mcstats, convert_plaintext
+from __main__ import app, flask, a, convert_plaintext
+import urllib, urllib.request, json
 
 # 		========================
+
+def get_mcstats():
+	return json.loads(urllib.request.urlopen(f"https://api.mcsrvstat.us/2/{urllib.parse.quote('mc.elisttm.space')}").read().decode('utf8'))
 
 class mc():
 
@@ -28,8 +32,7 @@ class mc():
 
 @app.route('/minecraft')
 def minecraft(): 
-	mcstats = get_mcstats()
-	return flask.render_template('minecraft.html', mcstats = mcstats, mc = mc(), a = a)
+	return flask.render_template('minecraft.html', mcstats = get_mcstats(), mc = mc(), a = a)
 
 @app.route('/minecraft/info')
 def minecraft_info(): 

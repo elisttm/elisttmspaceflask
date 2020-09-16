@@ -12,19 +12,26 @@
 		</p>
 
 	<button onclick="window.open('{{ tb.invite }}')">invite to a server</button>
-	<button onclick="window.open('{{ tb.github }}')"> source code </button>
-	<button onclick="window.open('{{ tb.cmds }}')"> list of commands </button>
-	<button onclick="window.open('{{ tb.tags }}')"> list of tags </button>
+	<button onclick="window.open('{{ tb.github }}')">source code</button>
+	<button onclick="window.open('{{ tb.cmds }}')">list of commands</button>
+	<button onclick="window.open('{{ tb.tags }}')">list of tags</button>
 
-<br><br>
-	<iframe src="{{ tb.cmds }}" style="border:none;height:34px;width:300px;border-radius:4px;" name="trashbot status" scrolling="no"></iframe>
+	<br><br>
+		<iframe src="{{ tb.cmds }}" style="border:none;height:34px;width:300px;border-radius:4px;" name="trashbot status" scrolling="no"></iframe>
 
-<br><br><hr width="50%"><br>
-  
+	<br><br><hr width="50%"><br>
+		
   <h2>what features does it have?</h2>
     <div class="list" width="100%"><ul class="list">
 			{% for feature in tb.features %}
 				<li>{{ feature }}</li>
+			{% endfor %}
+		</ul></div>
+
+	<h2>planned/possible features</h2>
+    <div class="list" width="100%"><ul class="list">
+			{% for p_feature in tb.planned %}
+				<li>{{ p_feature }}</li>
 			{% endfor %}
 		</ul></div>
 

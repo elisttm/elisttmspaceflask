@@ -44,6 +44,6 @@ def pack_changelogs():
 	changelog_page = "<style>p {color:#fff;font-family:monospace;text-align:justify;line-height:1.25;padding: 0 25px 0 25px;} h4 {color: #fff;font-family:monospace;text-align:center;}</style><p>"
 	for year in pack_changelog:
 		changelog_page += f"<p><h4>{year}</h4><br><p>"
-		for x, y in pack_changelog[year].items():
-			changelog_page += f"<b>{x}</b>{y}<br><br>"
+		for version, changes in pack_changelog[year].items():
+			changelog_page += f"<b>{version}</b>{changes}<br><br>"
 	return changelog_page

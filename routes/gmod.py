@@ -13,7 +13,7 @@ class gm():
 	
 	collections = {
 		"sandbox addons": "https://steamcommunity.com/sharedfiles/filedetails/?id=2084328429",
-		"gamemode addons": "https://steamcommunity.com/sharedfiles/filedetails/?id=2085165984",
+		"other gamemode addons": "https://steamcommunity.com/sharedfiles/filedetails/?id=2085165984",
 		"relevant maps": "https://steamcommunity.com/sharedfiles/filedetails/?id=2169587352",
 	}
 

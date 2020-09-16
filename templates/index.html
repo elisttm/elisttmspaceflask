@@ -5,7 +5,7 @@
 {% block og_desc %}eli's super cool website :D{% endblock %}
 
 {% block head %}
-<meta name="keywords" content="{{ a.keywords }}">
+<meta name="keywords" content="{{ indx.keywords }}">
 {% endblock %}
 
 {% block content %}
@@ -14,49 +14,22 @@
     <div class="content">
 			<p>welcome to <b>elisttm.space</b>!</p>
 			<p>this website is meant as a hub for me and all of my public projects</p>
-			<p>if theres a page you cant find, use the <a href='/sitemap'>sitemap</a></p>
 		
 			<div class="sm-icons-list"><ul class="sm-icons">
-				{% for name, url in sm_buttons.items() %}
+				{% for name, url in indx.sm_buttons.items() %}
 					<li><a href="{{ url }}" target="_blank"> <i class="sm sm-{{ name }}"><img src="/static/images/logos/{{ name }}.png"></i></a></li>
 				{% endfor %}
 			</ul></div>
 		</div>
 
-<hr width="75%">
-    
-	<h2>trashbot</h2>
-    <p>a simple discord.py bot with various features</p>
-
-	<button onclick="window.location.href='/trashbot'">more information</button>
-
-<br><br><hr width="60%">
-
-	<h2>minecraft server</h2>
-    <p>a 1.16.2 vanilla smp server that i host, manage and develop</p>
-  
-	<button onclick="window.location.href='/minecraft'">more information</button>
-
-<br><br><hr width="60%">
-
-	<h2>gmod server</h2>
-    <p>a pretty cool garrys mod server that i host and manage</p>
-  
-	<button onclick="window.location.href='/gmod'">more information</button>
-
-<br><br><hr width="60%">
-
-  <h2>eli's epic gamer pack</h2>
-    <p>my personal minecraft resource pack for 1.8x and 1.14+</p>
-	
-	<button onclick="window.location.href='/pack'">more information</button>
-
-<br><br><hr width="75%"><br>
-    
-  <h2>miscellaneous pages</h2>
-    <p>some other useful links you might need or want to see</p>
-	
-	<button onclick="window.location.href='/styles'">styles page</button>
-	<button onclick="window.location.href='/sitemap'">sitemap</button>
+	<hr width="75%">
+		{% for section in indx.sections %}	
+			<h2>{{ section }}</h2>
+				<p>{{ indx.sections[section]['desc'] }}</p>
+			{% for path in indx.sections[section]['path'] %}
+				<button onclick="window.location.href='{{ path }}'">more information</button>
+			{% endfor %}
+			<br><br><hr width="{{ indx.sections[section]['hr'] }}%">
+		{% endfor %}
 
 {% endblock %}

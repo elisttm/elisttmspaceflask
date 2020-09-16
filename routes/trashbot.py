@@ -1,4 +1,5 @@
 from __main__ import app, flask, a
+import urllib, urllib.request, json
 
 # 		========================
 
@@ -9,14 +10,20 @@ class tb():
 	cmds = "https://trashbot.elisttm.space/commands"
 	tags = "https://trashbot.elisttm.space/tags"
 
-	features = (
-		"commands using a growing database of cat pictures", 
-		"utility commands for server/user info", 
+	features = ( 
+		"utility commands for useful information", 
 		"customizable prefix per server",
 		"active support and updates", 
-		"reliable and high uptime",
-		"tag database command",
+		"reliable + high uptime",
+		"global tag database",
+		"random cat commands",
 		"...and more!", 
+	)
+
+	planned = (
+		"highly customizable per-server settings",
+		"more user suggested commands",
+		"settings dashboard website",
 	)
 
 # 		========================

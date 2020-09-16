@@ -18,12 +18,6 @@ app = Flask(__name__,
 
 a = constants()
 
-def get_mcstats():
-	ip = 'mc.elisttm.space'
-	clean_ip = urllib.parse.quote(ip)
-	mcstats_json = urllib.request.urlopen(f'https://api.mcsrvstat.us/2/{clean_ip}').read().decode('utf8')
-	return json.loads(mcstats_json)
-
 def convert_plaintext(content:str):
 	content = make_response(content, 200)
 	content.mimetype = "text/plain"

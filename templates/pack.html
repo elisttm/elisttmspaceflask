@@ -6,9 +6,9 @@
 
 {% block content %}
 
-  <h1>eli's epic gamer pack</h1>
-    <p>in short, <b>eli's epic gamer pack</b> is my personal resource pack that updates a lot of textures and sounds 
-		<br><st>compatible with versions <b>1.8x</b> and <b>1.14+</b></st>
+  <h1>eli's cool resource pack</h1>
+    <p>in short, <b>eli's cool resource pack</b> is my personal resource pack that updates a lot of textures and sounds <br>
+		<st>compatible with versions <b>1.8x</b> and <b>1.14+</b></st>
 
 	<br><br><br>
 	
@@ -23,16 +23,16 @@
     <p><st>for versions 1.8.x, use only the base pack.<br>for any versions 1.14 and above, use both</st></p>
 
   <h3>download links:</h3>
-    <button onclick="window.open('{{ mcpk.base }}','_blank')"> base pack </button>
+    <button onclick="window.open('{{ mcpk.base }}','_blank')">base pack</button>
     <button onclick="window.open('{{ mcpk.overlay }}','_blank')">1.14+ overlay</button>
   
 	<br><br><hr width="65%"><br>
 
   <h3>features</h3>
 	<div class="list" width="75%"><ul>
-			{% for feature in mcpk.features %}
-				<li>{{ feature }}</li>
-			{% endfor %}
+		{% for feature in mcpk.features %}
+			<li>{{ feature }}</li>
+		{% endfor %}
   </ul></div>
 
   <h2>changelog</h2>
