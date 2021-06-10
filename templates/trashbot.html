@@ -2,13 +2,12 @@
 
 {% block page_title %}trashbot{% endblock %}
 {% block og_title %}trashbot{% endblock %}
-{% block og_desc %}a pretty awesome discord bot{% endblock %}
+{% block og_desc %}my cool discord bot{% endblock %}
 
 {% block content %}
 
   <h1>trashbot</h1>
-    <p>trashbot is a simple discord.py bot developed by me
-			<br><st>note: if you find an error, do t!report to report it</st>
+    <p>trashbot is a multipurpose discord bot developed by me intended for use in small servers
 		</p>
 
 	<button onclick="window.open('{{ tb.invite }}')">invite to a server</button>
@@ -17,22 +16,21 @@
 	<button onclick="window.open('{{ tb.tags }}')">list of tags</button>
 
 	<br><br>
-		<iframe src="{{ tb.cmds }}" style="border:none;height:34px;width:300px;border-radius:4px;" name="trashbot status" scrolling="no"></iframe>
-
-	<br><br><hr width="50%"><br>
 		
-  <h2>what features does it have?</h2>
-    <div class="list" width="100%"><ul class="list">
-			{% for feature in tb.features %}
-				<li>{{ feature }}</li>
-			{% endfor %}
-		</ul></div>
+	<div class="row"><div class="column">
 
-	<h2>planned/possible features</h2>
-    <div class="list" width="100%"><ul class="list">
-			{% for p_feature in tb.planned %}
-				<li>{{ p_feature }}</li>
-			{% endfor %}
-		</ul></div>
+		<h2>what features does it have?</h2>
+			<div class="list" width="100%"><ul class="list">
+				{% for feature in tb.features %}<li>{{ feature }}</li>
+			{% endfor %}</ul></div>
+
+	</div><div class="column">
+		
+		<h2>planned/possible features</h2>
+			<div class="list" width="100%"><ul class="list">
+				{% for p_feature in tb.planned %}<li>{{ p_feature }}</li>
+			{% endfor %}</ul></div>
+
+	</div></div>
 
 {% endblock %}

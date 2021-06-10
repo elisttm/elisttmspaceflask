@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block page_title %}home{% endblock %}
-{% block og_title %}elisttm{% endblock %}
-{% block og_desc %}eli's super cool website :D{% endblock %}
+{% block page_title %}homepage{% endblock %}
+{% block og_title %}eli website{% endblock %}
+{% block og_desc %}funny{% endblock %}
 
 {% block head %}
 <meta name="keywords" content="{{ indx.keywords }}">
@@ -11,25 +11,15 @@
 {% block content %}
 
   <h1>welcome!</h1>
-    <div class="content">
-			<p>welcome to <b>elisttm.space</b>!</p>
-			<p>this website is meant as a hub for me and all of my public projects</p>
+    {% for info_text in indx.info: %}
+		<p>{{ info_text }}</p>{% endfor %}
 		
 			<div class="sm-icons-list"><ul class="sm-icons">
-				{% for name, url in indx.sm_buttons.items() %}
-					<li><a href="{{ url }}" target="_blank"> <i class="sm sm-{{ name }}"><img src="/static/images/logos/{{ name }}.png"></i></a></li>
+				{% for name, url in indx.sm_buttons.items() %}<li><a href="{{ url }}" target="_blank"> <i class="sm sm-{{ name }}"><img src="/static/images/logos/{{ name }}.svg"></i></a></li>
 				{% endfor %}
 			</ul></div>
-		</div>
 
-	<hr width="75%">
-		{% for section in indx.sections %}	
-			<h2>{{ section }}</h2>
-				<p>{{ indx.sections[section]['desc'] }}</p>
-			{% for path in indx.sections[section]['path'] %}
-				<button onclick="window.location.href='{{ path }}'">more information</button>
-			{% endfor %}
-			<br><br><hr width="{{ indx.sections[section]['hr'] }}%">
-		{% endfor %}
+			{% for path, label in indx.buttons.items(): %}
+			<button onclick="window.location.href=('{{ path }}')"><h3>{{ label['a'] }}</h3>{{ label['b'] }}<br></button>{% endfor %}
 
 {% endblock %}

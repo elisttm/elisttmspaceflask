@@ -8,41 +8,27 @@
 
   <h1>mc.elisttm.space</h1>
 		<p>
-			a {{ mc.version }} vanilla smp that i host, manage and develop.<br>
-			<st>
-			{% if mcstats['online'] == True %}
-				the server is currently <b>online</b> with <b>{{ mcstats['players']['online'] }}</b> players
-			{% else %}
-				the server is currently <b>offline</b>
-			{% endif %}
-			</st>
-		</p>
-		
+			a minecraft vanilla smp server that i host, manage and develop.<br>note that i try to keep my server up as much as possible, however there will be periods where it is down</p>
+			<!--iframe style="border:none;height:34px;width:100%" src="minecraft/upcheck" name="minecraft server status" scrolling="no"></iframe-->
+
 		<button onclick="window.open('{{ mc.dynmap }}')"> dynamic map </button>
-		<button onclick="window.open('{{ mc.analytics }}')"> player analytics </button>
+		<button onclick="window.open('{{ mc.plan }}')"> player stats </button>
+		<button onclick="window.location.href=('minecraft/recipes')"> custom recipes </button>
 
-	<br><br><hr width="50%">
+	<div class="row"><div class="column">
 
-  <h2>server rules</h2>
-    <div class="list" width="100%"><ul class="list">
-			{% for rule in mc.rules %}
-				<li>{{ rule }}</li>
-			{% endfor %}
-		</ul></div>
+		<h2>rules</h2>
+			<div class="list" width="100%"><ul class="list">
+				{% for rule in mc.rules %}<li>{{ rule }}</li>
+			{% endfor %}</ul></div>
+		<p><b>refusal to abide by these rules will result in a ban</b></p>
 
-  <h2>server plugins + features</h2>
-    <div class="list" width="100%"><ul class="list">
-			{% for feature in mc.features %}
-				<li>{{ feature }}</li>
-			{% endfor %}
-		</ul></div>
+	</div><div class="column">
+		<h2>features</h2>
+			<div class="list" width="100%"><ul class="list">
+				{% for feature in mc.features %}<li>{{ feature }}</li>
+			{% endfor %}</ul></div>
 
-	<h2>custom recipes</h2>
-		<style>.recipe_img {width: 200px; height: 120px}</style>
-			{% for recipe in mc.recipes %}
-				<img src="/static/images/recipes/{{ recipe }}.png" class="recipe_img" alt="custom {{ recipe }} recipe"/>
-			{% endfor %}
-
-	<br><h5>for all basic info about the server, click <a href="/minecraft/info">here</a><h5>
+	</div></div>
 
 {% endblock %}

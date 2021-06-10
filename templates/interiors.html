@@ -1,0 +1,25 @@
+<!-- this is not a main site page i just have this for a silly business i run on a minecraft smp server -->
+
+{% extends "base.html" %}
+
+{% block page_title %}interior design{% endblock %}
+{% block og_title %}eli's interior design{% endblock %}
+{% block og_desc %}my awesome interior design service{% endblock %}
+
+{% block content %}
+
+  <h1>eli's interior design</h1>
+
+		<h2>terms of service</h2>
+			<div class="list" width="100%"><ul class="list" style="padding:0">
+				{% for rule in interior.rules %}<li>{{ rule }}</li>
+			{% endfor %}</ul></div>
+
+		<h2>examples from satisfied customers</h2>
+			<p>{% for image in interior.images %}<img style="max-width:75%;height:auto" src="{{ image }}"><br>
+		{% endfor %}</p>
+
+
+{% endblock %}
+
+

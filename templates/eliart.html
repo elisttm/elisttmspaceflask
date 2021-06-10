@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block page_title %}art gallery{% endblock %}
+{% block og_title %}eli art gallery{% endblock %}
+{% block og_desc %}art gallery filled with many elis{% endblock %}
+
+{% block content %}
+
+	<h1>art of eli :D</h1>
+		<p>(this is not absolutely every piece i have) if your art is shown here and you wish to have it removed, contact me! 
+		<br>click an image to open it in full resolution, artists are credited and linked to if possible!
+
+	<div style="center">
+	{% for file, artist in art.art.items() %}
+		<div class="gallery">
+			<a target="_blank" href="{{ file }}"><img src="{{ file }}" alt="art by {{ artist['a'] }}" width="auto" height="100px"></a>
+			<div class="desc">by {% if 'b' in artist %}<a target="_blank" href="{{ artist['b'] }}">{% endif %}{{ artist['a'] }}</a>{% if 'c' in artist %} | <a target="_blank" href="{{ artist['c'] }}">post</a>{% endif %}</div>
+		</div>
+	{% endfor %}
+	</div>
+
+</body>
+</html>
+
+{% endblock %}

@@ -2,28 +2,18 @@
 
 {% block page_title %}random cats{% endblock %}
 {% block og_title %}random cat page{% endblock %}
-{% block og_desc %}a pretty cool random cat page{% endblock %}
+{% block og_desc %}my cat image website{% endblock %}
 
 {% block content %}
 
   <h1>random cat image site</h1>
-		<p>a simple flask site that i host myself that gives a random cat on each page load</p>
+		<p>a simple site i made that hosts thousands of cat pictures that can be picked randomly<br>i am too lazy to write documentation for this sorry lol</p>
 		
 		{% if status == 200 %}
-			<button onclick="window.open('{{ cat_url }}')"> cat page <br> (code {{ status }}: the site is currently up!) </button>
+			<button onclick="window.open('{{ cat_url }}')"> cat page </button>
 		{% else %}
-			<button onclick="window.open('{{ cat_url }}')"> cat page <br> (code {{ status }}: site is down or there was an error making a request to the server) </button>
+			<button onclick="window.open('{{ cat_url }}')"> cat page </button>
 		{% endif %}
 
-	<br><br><hr width="50%">
-
-  <h2>how it works</h2>
-    <p style="line-height:1.75;text-align:left;padding: 0 20% 0 20%;">
-			there are 2 main pages you can use, <a href="{{ cat_url }}random/" target="_blank">/random</a> and <a href="{{ cat_url }}api/" target="_blank">/api</a><br>
-			<a href="{{ cat_url }}random/" target="_blank">/random</a> gets a random file and displays its path and contents<br>
-			<a href="{{ cat_url }}api/" target="_blank">/api</a> gets a random file and returns only its url to be used in some kind of rest api<br>
-			optionally, you can supply the name of a valid directory (i.e. <a href="{{ cat_url }}random/floppa" target="_blank">/random/floppa</a>) to only get files from it</br>
-			valid directory names can be found on the randomcat <a href="{{ cat_url }}" target="_blank">index page</a> or via <a href="{{ cat_url }}directories" target="_blank">/directories</a>
-		</p>
 
 {% endblock %}

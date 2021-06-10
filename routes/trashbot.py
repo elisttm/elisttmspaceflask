@@ -7,23 +7,23 @@ class tb():
 	
 	invite = "https://discordapp.com/oauth2/authorize?client_id=439166087498825728&scope=bot&permissions=8"
 	github = "https://github.com/elisttm/trashbot"
-	cmds = "https://trashbot.elisttm.space/commands"
-	tags = "https://trashbot.elisttm.space/tags"
+	cmds = "http://e.elisttm.space:42069/"
+	tags = "http://e.elisttm.space:42069/tags"
 
 	features = ( 
-		"utility commands for useful information", 
-		"customizable prefix per server",
-		"active support and updates", 
+		"utility commands for useful information",
+		"customizable join/leave messages, autorole and stickyroles", 
+		"customizable starboard", 
 		"reliable + high uptime",
 		"global tag database",
-		"random cat commands",
+		"funny cat commands",
 		"...and more!", 
 	)
 
 	planned = (
-		"highly customizable per-server settings",
-		"more user suggested commands",
+		"higher degree of per-server customization",
 		"settings dashboard website",
+		"reaction role menu creator and editor",
 	)
 
 # 		========================

@@ -4,9 +4,9 @@ from __main__ import app, flask, a
 
 class mcpk():
 
-	version = "1.3.0"
-	base = "https://www.mediafire.com/file/z0rbmyf9wrf56ew/eli%27s_epic_gamer_pack_%5Bv1.3.0%5D.zip/file"
-	overlay = "https://www.mediafire.com/file/p2157v1ved7c2cb/eli%27s_epic_gamer_pack_1.14+_overlay.zip/file"
+	version = "1.4.0"
+	base = "http://www.mediafire.com/file/reoj4nha9trr68e/eli_pack_%255Bv1.4.0%255D.zip/file"
+	overlay = "http://www.mediafire.com/file/fqcv29udxt0gtr0/eli_pack_1.16%252B_overlay.zip/file"
 	
 	features = (
 		"natural blocks are softer and nicer to look at",
@@ -16,6 +16,9 @@ class mcpk():
 	)
 
 pack_changelog = {
+	'2021': {
+		"v1.4.0 - ":"(2/26) renamed to \"eli pack\"; added netherite armor textures aswell as altered and cut down on many many other textures",
+	},
 	'2020': {
 		"v1.3.0 - ":"(7/19) minor updates to ui textures introduced in 1.16",
 		"v1.2.1 - ":"(6/16) changed the wither skeleton texture to be more consistent with the regular skeleton texture",

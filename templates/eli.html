@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_title %}eli{% endblock %}
+{% block og_title %}eli{% endblock %}
+{% block og_desc %}my swag fursona{% endblock %}
+
+{% block content %}
+
+  <h1>my fursona</h1>
+
+	<div class="row"><div class="column" style="padding-right:0%">
+
+	<img src="/static/images/ref.png" alt="eli reference" width="80%"/>
+
+	</div><div class="column">
+
+			<div class="list" width="100%" style="font-size:130%"><ul class="list">
+				{% for info in eli.info %}<li>{{ info }}</li>
+			{% endfor %}</ul></div>
+
+	<br><br>
+
+		<p>feel free to draw him anytime!</p>
+		<button onclick="window.location.href=('eli/art')"> eli art gallery </button-->
+
+	</div></div>
+
+{% endblock %}

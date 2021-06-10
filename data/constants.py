@@ -6,14 +6,12 @@ class constants():
 	favicon = "/static/favicon.ico"
 
 	images = "/static/images"
-	logos = "/static/images/logos"
 
-	twitter = "https://twitter.com/elisttm"
+	twitter = "https://twitter.com/elisttm2"
 	youtube = "https://www.youtube.com/c/elisttm"
 	steam = "https://steamcommunity.com/id/elisttm"
 	github = "https://github.com/elisttm"
-	discord = "https://discord.com/invite/a9UUJ3P"
-	patreon = "https://www.patreon.com/elisttm"
+	discord = "https://discord.gg/bRtCKQje6Z"
 	paypal = "https://paypal.me/thetrashman"
 
 	t_prefix = ""
@@ -21,8 +19,9 @@ class constants():
 
 	header_items = {
 		'/': 'home',
-		'/donors/': 'donors',
-		'/minecraft': 'mc server',
+	#	'/donors/': 'donors',
+		'/eli': 'fursona',
+		'/minecraft': 'minecraft',
 		'/trashbot': 'trashbot',
 	}
 

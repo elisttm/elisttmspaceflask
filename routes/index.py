@@ -4,49 +4,31 @@ from __main__ import app, flask, a
 
 class indx():
 
-	keywords = "elisttm, elijahsttm, elijah the trash man, creeperstorm75, trashbot"
+	keywords = "elisttm, elisttm2, elittm, eli, trashbot, mc.elisttm.space"
 
 	sm_buttons = {
 		'twitter': a.twitter,
 		'youtube': a.youtube,
 		'steam': a.steam,
 		'github': a.github,
-		'discord': a.discord,
-		'patreon': a.patreon,
+		#'discord': a.discord,
 	}
 
-	sections = {
-		'trashbot': {
-			'desc': 'a simple discord.py bot with various features',
-			'path': ['/trashbot'],
-			'hr': 60
-		},
-		'minecraft server': {
-			'desc': 'a 1.16.2 vanilla smp server that i host, manage and develop',
-			'path': ['/minecraft'],
-			'hr': 60
-		},
-		'my website': {
-			'desc': 'a flask backended website that i develop (hint: its this one)',
-			'path': ['/website'],
-			'hr': 60
-		},
-		'random cats': {
-			'desc': 'a personally hosted page that serves random cat pictures from my personal collection of funny cats',
-			'path': ['/cats'],
-			'hr': 60
-		},
-		'gmod server': {
-			'desc': 'a pretty cool garrys mod server that i host and manage',
-			'path': ['/gmod'],
-			'hr': 60
-		},
-		'eli\'s cool resource pack': {
-			'desc': 'my personal minecraft resource pack for 1.8x and 1.14+',
-			'path': ['/pack'],
-			'hr': 75
-		},
+	buttons = {
+		"/eli": {"a": "my fursona", "b": "my fursonas ref + gallery"},
+		"/trashbot": {"a": "trashbot", "b": "my discord bot"},
+		"/minecraft": {"a": "mc.elisttm.space", "b": "my minecraft server"},
+		"/pack": {"a": "eli pack", "b": "my resource pack"},
+		"/cats": {"a": "random cats", "b": "my funny cat website"},
+		"https://twitter.com/i/events/1377729588709703683?s=20": {"a": "my art", "b": "all in one twitter moment"}
 	}
+
+	info = (
+		"hi! im eli, im a 16 year old programmer artist computer nerd cat person and this is my website!",
+		"this site is somewhat regularly updated and currently contains many pages of projects ive worked on!",
+		"you can find links to my social media/contacts and other pages on and off this site below!",
+		"if you find a bug or have a suggestion for the website, feel free to contact me.",
+	)
 
 # 		========================
 

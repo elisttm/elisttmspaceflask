@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_title %}custom recipes{% endblock %}
+{% block og_title %}custom recipes{% endblock %}
+{% block og_desc %}custom recipes of the elisttm minecraft server{% endblock %}
+
+{% block content %}
+
+	<h2>custom recipes</h2>
+		<style>.recipe_img {width: 200px; height: 120px}</style>
+			{% for recipe in mc.recipes %}<img src="/static/images/recipes/{{ recipe }}.png" class="recipe_img" alt="custom {{ recipe }} recipe"/>
+			{% endfor %}
+	<br><br>
+
+	<button onclick="window.location.href=('/minecraft')"> back </button>
+
+{% endblock %}
