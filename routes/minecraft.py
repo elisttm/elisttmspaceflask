@@ -11,6 +11,7 @@ class mc():
 	dynmap = "http://mc.elisttm.space:8123/"
 	plan = "http://mc.elisttm.space:8804/server/elisttm"
 	recipes = ("elytra", "shulker", "saddle", "nametag", "leather",)
+	old_worlds = "https://www.mediafire.com/folder/12kozz7hn0olx/mcserver"
 	
 	rules = (
 		"no cheating, griefing, stealing, etc",

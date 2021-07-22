@@ -1,93 +1,114 @@
+import datetime
+from datetime import datetime
+import operator
+import copy
+
 class art():
 
-	x = "/static/eli/"
+	art_ = [
 
-	art = {
+		# [image, timestamp, artist, artist-url, post-url]
 
-		# f"file path": {"a": "artist name", "b": "artist link (if possible)", "c": "link to original art post (if possible)"},
+		["amber.png", "March 23, 2021" , "amber", "https://twitter.com/minisodaparty"],
+		["ambericon.png", "April 26, 2021", "amber", "https://twitter.com/minisodaparty"],
+		["amberpride.png", "May 30, 2021", "amber", "https://twitter.com/minisodaparty"],
+		["amberchibi.png", "June 3, 2021", "amber", "https://twitter.com/minisodaparty"],
+		["amberpage.png", "June 9, 2021", "amber", "https://twitter.com/minisodaparty"],
+		["ambermeow.png", "June 22, 2021", "amber", "https://twitter.com/minisodaparty"],
 
-		f"{x}amber.png": {"a": "amber", "b": "https://twitter.com/minisodaparty"},
+		["blake.png", "July 21, 2021", "blake", "https://twitter.com/cxtcvlt", "https://twitter.com/cxtcvlt/status/1417737900435849218"],
 
-		f"{x}ambericon.png": {"a": "amber", "b": "https://twitter.com/minisodaparty"},
-		
-		f"{x}amberpride.png": {"a": "amber", "b": "https://twitter.com/minisodaparty"},
+		["zesty1.png", "June 30, 2021", "zesty", "https://twitter.com/ZestyLemonss", "https://twitter.com/gecgender/status/1410327704654823428"],
+		["zestyswag.png", "July 15, 2021", "zesty", "https://twitter.com/ZestyLemonss", "https://twitter.com/ZestyLemonss/status/1415719392546115584"],
 
-		f"{x}amberchibi.png": {"a": "amber", "b": "https://twitter.com/minisodaparty"},
+		["witchfinder.png", "July 16, 2021", "witchfinder", "https://twitter.com/FINDEROFWITCHES", "https://twitter.com/FINDEROFWITCHES/status/1416084567581155332"],
 		
-		f"{x}amberpage.png": {"a": "amber", "b": "https://twitter.com/minisodaparty"},
+		["nick.png", "June 16, 2021", "nick", "https://twitter.com/hearthurtzzz", "https://twitter.com/hearthurtzzz/status/1405374520266047490"],
+		
+		["exyli1.png", "July 3, 2021", "exyli", "https://twitter.com/exyli_", "https://twitter.com/Exyli_/status/1411300554098155537"],
+		
+		["goob.png", "May 28, 2021", "goob", "https://twitter.com/goobysart", "https://twitter.com/goobysart/status/1398454342957608964"],
 
-		f"{x}churro.jpg": {"a": "churro", "b": "https://twitter.com/sockguts"},
+		["miles.png", "March 25, 2021", "miles", "https://twitter.com/featherk1ss", "https://twitter.com/featherk1ss/status/1375110690776743936"],
 		
-		f"{x}goob.png": {"a": "goob", "b": "https://twitter.com/goobysart", "c": "https://twitter.com/goobysart/status/1398454342957608964?s=20"},
+		["milespride.png", "June 2, 2021", "miles", "https://twitter.com/featherk1ss", "https://twitter.com/featherk1ss/status/1400227222951239680"],
 		
-		f"{x}miles.png": {"a": "miles", "b": "https://twitter.com/featherk1ss", "c": "https://twitter.com/featherk1ss/status/1375110690776743936?s=20"},
-		
-		f"{x}milespride.png": {"a": "miles", "b": "https://twitter.com/featherk1ss", "c": "https://twitter.com/featherk1ss/status/1400227222951239680?s=20"},
-		
-		f"{x}teserex2.jpg": {"a": "teserex", "b": "https://twitter.com/teserex_exe", "c": "https://twitter.com/teserex_exe/status/1402115848123342855?s=20"},
+		["mileswatercolor.jpg", "June 15, 2021", "miles", "https://twitter.com/featherk1ss", "https://twitter.com/featherk1ss/status/1404882187250503681"],
 
-		f"{x}doe.jpg": {"a": "doe", "b": "https://twitter.com/doeblush", "c": "https://twitter.com/doebIush/status/1398336091657101323"},
-		
-		f"{x}popbob.jpg": {"a": "popbob", "b": "https://twitter.com/P0pbob", "c": "https://twitter.com/P0pbob/status/1373947896245129217?s=20"},
-		
-		f"{x}nabix.jpg": {"a": "nabix", "b": "https://twitter.com/Nabix_lol", "c": "https://twitter.com/Nabix_lol/status/1379524309648089089?s=20"},
+		["churro.jpg", "March 12, 2021", "churro", "https://twitter.com/sockguts"],
 
-		f"{x}glowy.jpg": {"a": "glowy", "b": "https://twitter.com/glowyart", "c": "https://twitter.com/glowyart/status/1382013628640075776?s=20"},
+		["teserex2.jpg", "June 8, 2021", "teserex", "https://twitter.com/teserex_exe", "https://twitter.com/teserex_exe/status/1402115848123342855"],
 		
-		f"{x}mora.jpg": {"a": "mora", "b": "https://twitter.com/moragilerto"},
-		
-		f"{x}josh.jpg": {"a": "josh", "b": "https://twitter.com/jjjoooosshhhh?s=21"},
-		
-		f"{x}maureendamn.jpg": {"a": "llamasaur", "b": "https://twitter.com/haz_a_biscuit"},
+		["haikala.png", "June 20, 2021", "haikala", "https://twitter.com/sharkjpg", "https://twitter.com/sharkjpg/status/1406708741572018182"],
 
-		f"{x}llamagay.png": {"a": "llamasaur", "b": "https://twitter.com/haz_a_biscuit"},
+		["nabix.jpg", "April 6, 2021", "nabix", "https://twitter.com/Nabix_lol", "https://twitter.com/Nabix_lol/status/1379524309648089089"],
+
+		["azereii.png", "June 22, 2021", "azereii", "https://twitter.com/azereii", "https://twitter.com/azereii/status/1407415818158288899"],
 		
-		f"{x}faefuck.png": {"a": "fae", "b": "https://twitter.com/AlexisDebroux"},
+		["shermy1.png", "July 12, 2021", "sherm", "https://twitter.com/shermtwt", "https://twitter.com/shermtwt/status/1414666966955171840"],
+		["shermchoke.png", "July 22, 2021", "sherm", "https://twitter.com/shermtwt", "https://twitter.com/shermtwt/status/1418305585137819650"],
+
+		["glowy.jpg", "April 13, 2021", "glowy", "https://twitter.com/glowyart", "https://twitter.com/glowyart/status/1382013628640075776"],
+		
+		["doe.jpg", "May 27, 2021", "doe", "https://twitter.com/doeblush"],
+		
+		["popbob.jpg", "March 22, 2021", "popbob", "https://twitter.com/P0pbob", "https://twitter.com/P0pbob/status/1373947896245129217"],
+		
+		["mora.jpg", "February 25, 2021", "mora", "https://twitter.com/moragilerto"],
+		
+		["josh.jpg", "November 19, 2020", "josh", "https://twitter.com/cumttv"],
+		
+		["maureendamn.jpg", "May 17, 2021", "llamasaur", "https://twitter.com/haz_a_biscuit"],
+
+		["llamagay.png", "January 16, 2021", "llamasaur", "https://twitter.com/haz_a_biscuit"],
+		
+		["faefuck.png", "November 12, 2020", "fae", "https://twitter.com/AlexisDebroux"],
 				
-		f"{x}darekit.png": {"a": "boots", "b": "https://twitter.com/darekit", "c": "https://twitter.com/darekit/status/1377070470902714377?s=20"},
+		["darekit.png", "March 30, 2021", "boots", "https://twitter.com/darekit", "https://twitter.com/darekit/status/1377070470902714377"],
 
-		f"{x}max.png": {"a": "max", "b": "https://twitter.com/yeen_fiend"},
+		["bennsect.png", "July 7, 2021", "bennsect", "https://artfight.net/~bennsect", "https://artfight.net/attack/2116796.eli"],
 
-		f"{x}satty.png": {"a": "satty", "b": "https://twitter.com/sadsatty", "c": "https://twitter.com/sadsatty/status/1391470688104505348?s=20"},
-		
-		f"{x}grant.jpg": {"a": "grant"},
-		
-		f"{x}devburger.png": {"a": "dev"},
-		
-		f"{x}sam.png": {"a": "sam"},
-		
-		f"{x}samstfu.jpg": {"a": "sam"},
-		
-		f"{x}nikkivrc.png": {"a": "nikki", "b": "https://twitter.com/fiishfin", "c": "https://twitter.com/fiishfin/status/1370219104125255681?s=20"},
-		
-		f"{x}skyaninsane.png": {"a": "skyan", "b": "https://twitter.com/SkyanUltra"},
-		
-		f"{x}grumm2b.jpg": {"a": "grumm", "b": "https://twitter.com/grummBB"},
-		
-		f"{x}grumm3c.png": {"a": "grumm", "b": "https://twitter.com/grummBB"},
-		
-		f"{x}skedgymeow.png": {"a": "skedgy", "b": "https://twitter.com/skedgyedgy"},
+		["max.png", "February 22, 2021", "max", "https://twitter.com/yeen_fiend"],
 
-		f"{x}skedgymurder.png": {"a": "skedgy", "b": "https://twitter.com/skedgyedgy"},
+		["satty.png", "May 9, 2021", "satty", "https://twitter.com/sadsatty", "https://twitter.com/sadsatty/status/1391470688104505348"],
+		
+		["grant.jpg", "November 23, 2020", "grant"],
+		
+		["devburger.png", "October 11, 2020", "dev"],
+		
+		["sam.png", "October 6, 2020", "sam"],
+		
+		["samstfu.jpg", "December 9, 2020", "sam"],
+		
+		["nikkivrc.png", "March 11, 2021", "nikki", "https://twitter.com/fiishfin", "https://twitter.com/fiishfin/status/1370219104125255681"],
+		
+		["grumm2b.jpg", "October 7, 2020", "grumm", "https://twitter.com/grummBB"],
+		["grumm3c.png", "December 7, 2020", "grumm", "https://twitter.com/grummBB"],
+		
+		["skedgymeow.png", "May 25, 2021", "skedgy", "https://twitter.com/skedgyedgy"],
+		["skedgymurder.png", "February 15, 2021", "skedgy", "https://twitter.com/skedgyedgy"],
 				
-		f"{x}fluffer.png": {"a": "fluffer", "b": "https://twitter.com/sofluffer"},
+		["fluffer.png", "July 20, 2020", "fluffer", "https://twitter.com/sofluffer"],
 		
-		f"{x}smeefaroni.jpg": {"a": "smeefaroni", "b": "https://twitter.com/smeefaroni", "c": "https://twitter.com/smeefaroni/status/1366143272029204482?s=20"},
+		["smeefaroni.jpg", "February 28, 2021", "smeefaroni", "https://twitter.com/smeefaroni", "https://twitter.com/smeefaroni/status/1366143272029204482"],
 
-		f"{x}sharpzbday.png": {"a": "sharpz", "b": "https://twitter.com/_Sharpz", "c": "https://twitter.com/Sharpz_Art/status/1359559872921153539?s=20"},
+		["sharpzbday.png", "February 10, 2021", "sharpz", "https://twitter.com/_Sharpz", "https://twitter.com/Sharpz_Art/status/1359559872921153539"],
 
-		f"{x}calvindgkjhjkjdfglkhkhnjk.png": {"a": "calvin", "b": "https://twitter.com/sic_trix"},
-
-		f"{x}calvin.png": {"a": "calvin", "b": "https://twitter.com/sic_trix"},
-
-		f"{x}calvin1.png": {"a": "calvin", "b": "https://twitter.com/sic_trix"},
-
-		f"{x}origay.png": {"a": "ori", "b": "https://twitter.com/audio_ori"},
+		["calvin1.png", "November 1, 2020", "calvin", "https://twitter.com/sic_trix"],
 		
-		f"{x}origay2.png": {"a": "ori", "b": "https://twitter.com/audio_ori"},
+		["calvin.png", "December 10, 2020", "calvin", "https://twitter.com/sic_trix"],
 		
-		f"{x}orikitten.png": {"a": "ori", "b": "https://twitter.com/audio_ori"},
-		
-		f"{x}bapus.png": {"a": "bapus", "b": "https://twitter.com/RoroBapy"},
+		["skyaninsane.png", "October 7, 2020", "skyan", "https://twitter.com/SkyanUltra"],
 
-	}
+		["origay.png", "January 1, 2021", "ori", "https://twitter.com/audio_ori"],
+		["origay2.png", "January 7, 2021", "ori", "https://twitter.com/audio_ori"],
+		["orikitten.png", "February 2, 2021", "ori", "https://twitter.com/audio_ori"],
+		
+	]
+
+	sorted_art = copy.deepcopy(art_)
+	for piece in sorted_art:
+		piece[1] = datetime.strptime(piece[1], '%B %d, %Y')
+	sorted_art = sorted(sorted_art, key=operator.itemgetter(1), reverse=True)
+	for piece in sorted_art:
+		piece[1] = datetime.strftime(piece[1], '%B %d, %Y')

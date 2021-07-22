@@ -7,20 +7,20 @@
 {% block content %}
 
   <h1>eli pack</h1>
-    <p>this is my custom minecraft resource pack that changes a loottt of stuff (im not going make a list here)<br>compatible with versions 1.8 through 1.16</p>
+    <p>this is my custom minecraft resource pack that changes a loottt of stuff (im not going make a list here)<br>compatible with either 1.8.9 or 1.17+</p>
 
 	<div class="row"><div class="column">
 
   <h2>current version: {{ mcpk.version }}</h2>
 
   <h3>download links:</h3>
-    <button onclick="window.open('{{ mcpk.base }}','_blank')">base pack</button>
-    <button onclick="window.open('{{ mcpk.overlay }}','_blank')">1.16 overlay</button>
+    <button onclick="window.open('{{ mcpk.download }}','_blank')">1.17+ full</button>
+    <button onclick="window.open('{{ mcpk.legacydownload }}','_blank')">1.8.9 legacy</button>
 
 	<h3>installation</h3>
 		<div class="list" width="100%"><ul class="list">
-			<li>if you're using 1.8, download the base pack and place it in your resource packs folder</li>
-			<li>if you're using 1.16+, download both packs and place both in your resource packs folder, making sure the overlay is above the base pack in game</li> 
+			<li>if you're using 1.8, download only the legacy pack and place it in your resource packs folder.</li>
+			<li>if you're using 1.17+, download only the 1.17 pack and place it in your resource packs folder.</li> 
 		</ul></div>
 
 	</div><div class="column">

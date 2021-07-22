@@ -7,14 +7,15 @@
 {% block content %}
 
 	<h1>art of eli :D</h1>
-		<p>(this is not absolutely every piece i have) if your art is shown here and you wish to have it removed, contact me! 
-		<br>click an image to open it in full resolution, artists are credited and linked to if possible!
+		<p>this is not absolutely every piece i have! if your art is in this gallery and you wish to have it removed, please do not hestitate to contact me! 
+		<br>click an image to open it in full resolution, artists are credited and linked to if possible!</p>
+		{% if sorted_ %}<p>to go back to normal sorting, click <a href="https://elisttm.space/eli/art">here</a>!<p>{% else %}<p>to sort images by new, click <a href="https://elisttm.space/eli/art/newest">here</a>!<p>{% endif %}
 
 	<div style="center">
-	{% for file, artist in art.art.items() %}
+	{% for piece in art %}
 		<div class="gallery">
-			<a target="_blank" href="{{ file }}"><img src="{{ file }}" alt="art by {{ artist['a'] }}" width="auto" height="100px"></a>
-			<div class="desc">by {% if 'b' in artist %}<a target="_blank" href="{{ artist['b'] }}">{% endif %}{{ artist['a'] }}</a>{% if 'c' in artist %} | <a target="_blank" href="{{ artist['c'] }}">post</a>{% endif %}</div>
+			<a target="_blank" href="/static/eli/{{ piece[0] }}"><img src="/static/eli/{{ piece[0] }}" alt="art by {{ piece[2] }}" width="auto" height="100px"></a>
+			<div class="desc">by {% if piece[3] %}<a target="_blank" href="{{ piece[3] }}">{% endif %}{{ piece[2] }}</a>{% if piece[4] %} | <a target="_blank" href="{{ piece[4] }}">post</a>{% endif %}<br><span style="font-size:12px">{{ piece[1] }}</span></div>
 		</div>
 	{% endfor %}
 	</div>

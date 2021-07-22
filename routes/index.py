@@ -3,7 +3,7 @@ from __main__ import app, flask, a
 # 		========================
 
 class indx():
-
+	
 	keywords = "elisttm, elisttm2, elittm, eli, trashbot, mc.elisttm.space"
 
 	sm_buttons = {
@@ -20,7 +20,7 @@ class indx():
 		"/minecraft": {"a": "mc.elisttm.space", "b": "my minecraft server"},
 		"/pack": {"a": "eli pack", "b": "my resource pack"},
 		"/cats": {"a": "random cats", "b": "my funny cat website"},
-		"https://twitter.com/i/events/1377729588709703683?s=20": {"a": "my art", "b": "all in one twitter moment"}
+		"https://twitter.com/i/events/1377729588709703683": {"a": "my art", "b": "all in one twitter moment"}
 	}
 
 	info = (

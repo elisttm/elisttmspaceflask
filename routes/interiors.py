@@ -20,6 +20,7 @@ class interior():
 	images = (
 		f"{x}trick.png",
 		f"{x}tes.png",
+		f"{x}mossrag.png",
 		f"{x}mine.png",
 	)
 

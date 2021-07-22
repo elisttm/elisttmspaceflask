@@ -4,26 +4,21 @@ from __main__ import app, flask, a
 
 class mcpk():
 
-	version = "1.4.0"
-	base = "http://www.mediafire.com/file/reoj4nha9trr68e/eli_pack_%255Bv1.4.0%255D.zip/file"
-	overlay = "http://www.mediafire.com/file/fqcv29udxt0gtr0/eli_pack_1.16%252B_overlay.zip/file"
+	version = "1.6"
+	download = "https://www.mediafire.com/file/y97fmg8ebt24niu/eli_pack_%255Bv1.6%255D.zip/file"
+	legacydownload = "https://www.mediafire.com/file/a2kxearuwrgp33c/eli_pack_%2528legacy%2529_%255Bv1.6%255D.zip/file"
 	
-	features = (
-		"natural blocks are softer and nicer to look at",
-		"less intrusive food and shield viewmodels",
-		"replaced sounds with more pleasant versions",
-		"...and more! (too lazy to list them)",
-	)
-
 pack_changelog = {
 	'2021': {
-		"v1.4.0 - ":"(2/26) renamed to \"eli pack\"; added netherite armor textures aswell as altered and cut down on many many other textures",
+		"v1.6 - ":"(6/30) seperated the 1.8 pack from the 1.17 pack; updated textures for 1.17, added some 1.17 textures, and updated some older textures",
+		"v1.5 - ":"(6/18) added @trickmynt's rainbow ancient debris textures, altered a bunch of textures for consistency, and added several vanillatweaks packs (i dont remember specifically which ones)",
+		"v1.4 - ":"(2/26) rebranded to \"eli pack\"; added netherite armor textures and altered many other textures for consistency",
 	},
 	'2020': {
-		"v1.3.0 - ":"(7/19) minor updates to ui textures introduced in 1.16",
+		"v1.3 - ":"(7/19) minor updates to ui textures introduced in 1.16",
 		"v1.2.1 - ":"(6/16) changed the wither skeleton texture to be more consistent with the regular skeleton texture",
-		"v1.2.0 - ":"(6/15) removed repetitive and unchanged files and compressed some others to reduce overall filesize of both packs (22mb -> 5mb)",
-		"v1.1.0 - ":"(2/15) updated guis for both packs; also added a link to here in the pack description",
+		"v1.2 - ":"(6/15) removed repetitive and unchanged files and compressed some others to reduce overall filesize of both packs (22mb -> 5mb)",
+		"v1.1 - ":"(2/15) updated guis for both packs; also added a link to here in the pack description",
 	},
 	'2019': {
 		"v1.0.1 - ":"(10/14) Changed icons and descriptions of both packs to better reflect this page",

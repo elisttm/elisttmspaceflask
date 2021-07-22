@@ -24,17 +24,3 @@ class constants():
 		'/minecraft': 'minecraft',
 		'/trashbot': 'trashbot',
 	}
-
-	pages = (
-		"https://elisttm.space/",
-		"https://elisttm.space/sitemap",
-		"https://elisttm.space/trashbot",
-		"https://elisttm.space/minecraft",
-		"https://elisttm.space/gmod",
-		"https://elisttm.space/cats",
-		"https://elisttm.space/pack",
-		"https://elisttm.space/donors",
-		"https://elisttm.space/styles",
-		"https://elisttm.space/sitemap.xml",
-		"https://elisttm.space/robots.txt",
-	)

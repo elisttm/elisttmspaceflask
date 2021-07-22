@@ -16,6 +16,10 @@ body {
 	padding: 0; margin: 0; 
 }
 
+@media screen and (max-width: 400px) {
+	body {background-color:var(--bg-color); }
+}
+
 a {color:var(--main-color); text-decoration: underline; transition: 0.5s} 
 a:hover {transition: 0.5s; color:var(--link-color); text-decoration: underline}
 p {font-family:var(--main-font);padding-bottom: 1mm;line-height:1.25}
@@ -49,6 +53,8 @@ list li {font-family: Monospace; font-size: 14px; line-height: 1.35;}
 .footer p {font-family:var(--header-font); font-size: 6pt;}
 
 st {font-size: 14px; color: #ccc;}
+
+.interior {max-width:40%; height:auto}
 
 .visible {font-family:var(--main-font); background-color:var(--bg-color); padding: 6mm;}
 

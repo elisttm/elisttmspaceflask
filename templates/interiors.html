@@ -16,8 +16,8 @@
 			{% endfor %}</ul></div>
 
 		<h2>examples from satisfied customers</h2>
-			<p>{% for image in interior.images %}<img style="max-width:75%;height:auto" src="{{ image }}"><br>
-		{% endfor %}</p>
+			{% for image in interior.images %}<a target="_blank" href="{{ image }}" ><img class="interior" src="{{ image }}"></a>
+		{% endfor %}
 
 
 {% endblock %}
