@@ -1,32 +1,32 @@
 from __main__ import app, flask, a
-import urllib, urllib.request, json
-
-# 		========================
 
 class tb():
 	
-	invite = "https://discordapp.com/oauth2/authorize?client_id=439166087498825728&scope=bot&permissions=8"
+	invite = "https://discord.com/api/oauth2/authorize?client_id=439166087498825728&scope=bot&permissions=1544416321"
 	github = "https://github.com/elisttm/trashbot"
-	cmds = "http://e.elisttm.space:42069/"
-	tags = "http://e.elisttm.space:42069/tags"
+	cmds = "https://trashbot.elisttm.space/commands"
+	tags = "https://trashbot.elisttm.space/tags"
+
+	buttons = (
+		(invite, 'bot invite'),
+		(cmds, 'commands'),
+		(github, 'source code'),
+	)
 
 	features = ( 
-		"utility commands for useful information",
-		"customizable join/leave messages, autorole and stickyroles", 
-		"customizable starboard", 
-		"reliable + high uptime",
-		"global tag database",
-		"funny cat commands",
+		"informative utility commands",
+		"fully customizable starboard", 
+		"join/leave messages, autorole, and stickyroles", 
+		"dashboard webpage for configuration",
+		"reliable uptime",
 		"...and more!", 
 	)
 
 	planned = (
-		"higher degree of per-server customization",
-		"settings dashboard website",
-		"reaction role menu creator and editor",
+		"reaction roles",
+		"reminders?",
+		"changelog",
 	)
-
-# 		========================
 
 @app.route('/trashbot')
 def trashbot(): 

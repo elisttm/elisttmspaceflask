@@ -1,101 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 :root{
-	--ok-color:#111;
-  --bg-color:#222;
-  --bg-alt-color:#333;
-	--main-color:#fff;
-  --link-color:#999;
-	--hover-color: #666;
-
-  --main-font:'Franklin Gothic Medium', sans-serif;
-	--header-font: monospace, 'Courier New', Courier;
+	--body-color:#111;
+  --background:#222;
+  --background-alt:#333;
+  --text-alt-color:#999;
+	--text-color:#fff;
+  --font:'Lato', sans-serif;
+	--font-head: 'Monospace', monospace;
 }
 
 body {
-  background-color:var(--ok-color); color:var(--main-color); font-family:var(--main-font);
-	cursor: auto; text-align: center; -webkit-font-smoothing: antialiased;
-	padding: 0; margin: 0; 
+  font-family:var(--font); color:var(--text-color); background-color:var(--body-color); text-align: center;
+	padding: 0; margin: 0; cursor: auto; 
+	-webkit-font-smoothing: antialiased; 
 }
 
-@media screen and (max-width: 400px) {
-	body {background-color:var(--bg-color); }
+.content {background-color:var(--background); margin: 0% 20vw; padding:1px 1vw 24px 1vw}
+
+@media screen and (max-width: 800px) {
+	body {background-color:var(--background);}
 }
 
-a {color:var(--main-color); text-decoration: underline; transition: 0.5s} 
-a:hover {transition: 0.5s; color:var(--link-color); text-decoration: underline}
-p {font-family:var(--main-font);padding-bottom: 1mm;line-height:1.25}
-li {font-family:var(--main-font);padding-bottom: 4px}
-ul {font-family:var(--main-font);padding-bottom: 4mm;}
-ol {font-family:var(--main-font);padding-bottom: 4mm;}
-dl {font-family:var(--main-font);padding-bottom: 4mm;}
-dd {font-family:var(--main-font);}
-dt {font-family:var(--main-font);}
-h1, h2, h3, h4, h5, h6 {font-family:var(--header-font);}
+@media screen and (max-width: 800px) {
+	.content {margin: 0; padding: 4px 1vw 12px 1vw}
+}
+
+a {color:var(--text-color); text-decoration: underline; transition: 0.5s} 
+a:hover {color:var(--text-alt-color); transition: 0.5s;}
+
+h1, h2, h3, h4, h5, h6 {font-family:var(--font-head);}
+p {line-height:1.35}
+
+li {padding-bottom: 8px;}
 
 div {margin: auto; cursor: auto;}
 
-table {text-align: center; margin-left: auto; margin-right: auto; padding: 5px;}
-tr {padding: 2px;} 
-td {padding: 5px;}
+button, .btn {background-color:var(--background-alt); color:var(--text-color); margin: 2px 2px; padding: 10px 10px; transition: 0.5s; font-size: 14px; border: none; outline-style: none; text-decoration: none; cursor: pointer;}
+button:hover, .btn:hover {background-color:var(--text-color); color:var(--background-alt); margin: 0px 0px; padding: 12px 12px; transition: 0.5s;}
 
-button {background-color:var(--bg-alt-color); color:var(--main-color); border: none; outline-style: none; cursor: pointer; margin: 4px 2px; padding: 10px 10px; transition: 0.35s;}
-button:hover {background-color:var(--main-color); color:var(--bg-alt-color); margin: 2px 2px; padding: 12px 12px; transition: 0.25s;}
+.button h3 {margin:2px;}
+.btn-header {font-size: 14px; font-family:var(--font-head); font-weight: bold; margin: 2px;}
 
-.page-block-idk {background-color:var(--bg-color); margin: 0% 16%; padding:4px 16px 16px}
+st {font-size: 14px; color:var(--text-alt-color);}
 
-@media screen and (max-width: 800px) {
-	.page-block-idk {margin: 0; padding: 4px 2% 8px}
-}
+.list {text-align: left; margin: 0 12% 0 12%;}
 
-.list {text-align: left; padding: 0 10% 0 10%;}
-list li {font-family: Monospace; font-size: 14px; line-height: 1.35;}
-
-.footer {background-color:var(--bg-alt-color); color:var(--main-color); text-align: center; position: fixed; padding: 0; left: 0; bottom: 0%; width: 100%; height: 20px;}
-.footer p {font-family:var(--header-font); font-size: 6pt;}
-
-st {font-size: 14px; color: #ccc;}
-
-.interior {max-width:40%; height:auto}
-
-.visible {font-family:var(--main-font); background-color:var(--bg-color); padding: 6mm;}
-
-.topnav {background-color: var(--bg-alt-color); padding: 0; margin: 8px 16% 0; overflow: hidden; font-family:var(--header-font)}
-.topnav-logo {font-size: 24px; font-weight: bold}
-.topnav img {padding:0px; margin-right:8px; margin-bottom: 2px; vertical-align: middle; width: 50px; height: 50px;}
-.topnav a {padding: 4px 10px; float: left; display: block; text-decoration: none;}
-.topnav a:hover, .topnav a.active {color:var(--bg-color); background-color:var(--main-color);}
-.topnav .togglebutton {display: none; padding: 21px 35px}
-.topnav-right {float: right}
-.topnav-right a {color:var(--c-text); padding: 22px 14px; font-size: 14px}
-
-@media screen and (max-width: 800px) {
-	.topnav {margin: 0}
-	.topnav-right a {display: none;}
-	.topnav a.togglebutton {float: right; display: block;}
-	.topnav-right {float:none;}
-	.topnav.responsive {position: relative;}
-	.topnav.responsive .togglebutton {position: absolute; right: 0; top: 0px;}
-	.topnav.responsive a {float: none; display: block; text-align: left;}
-}
-
-.column {box-sizing: border-box; float: left; width: 50%; padding:1%;}
+.column {box-sizing: border-box; float: left; width: 50%}
 .row:after {box-sizing: border-box; content: ""; display: table; clear: both;}
 @media screen and (max-width: 1000px) {.column {width: 100%;}}
 
-.gallery {padding: 1px 8px; width: auto; height: 200px; display:inline-block}
-.gallery img {width: auto; height: 75%;}
-.desc {padding-top: 1px; text-align: center;}
+/* topnav */
+.topnav {background-color:var(--background-alt); padding: 0; margin: auto 20vw 0 20vw; overflow: hidden; font-family:var(--font-head)}
+.logo {font-size: 20px; vertical-align: middle; font-weight: bold;}
+.logo img {padding:0px; margin-right:8px; vertical-align: middle; width: 48px; height: 48px;}
+.topnav .hbtn {padding: 4px 12px; float: left; display: block; text-decoration: none; transition: 0.5s}
+.topnav .hbtn:hover, .topnav .hbtn.active {color:var(--background); background-color:var(--text-color); transition: 0.5s}
+.topnav .togglebutton {display: none; padding: 18px 35px}
+.topnav-right {float: right}
+.topnav-right .hbtn {color:var(--text-color); padding: 20px 16px; font-size: 14px}
 
-.sm {background-color:var(--bg-alt-color); margin: 1px; padding: 12px 10px 8px; display: inline; vertical-align: center; transition: .5s; -o-transition: .5s; -ms-transition: .5s; -moz-transition: .5s; -webkit-transition: .5s;}
-.sm img{height: 18px; width: 18px;}
+@media screen and (max-width: 800px) {
+	.topnav {margin: 0}
+	.topnav-right .hbtn {display: none;}
+	.topnav .hbtn.togglebutton {float: right; display: block;}
+	.topnav-right {float:none;}
+	.topnav.responsive {position: relative;}
+	.topnav.responsive .togglebutton {position: absolute; right: 0; top: 0px;}
+	.topnav.responsive .hbtn {float: none; display: block; text-align: left;}
+}
 
-.sm-icons-list {width: 100%; display: block;} 
-.sm-icons-list ul {padding: 0; list-style: none}
+/* social buttons */
+div.sm-icons {margin: 32px 0;}
+.sm {background-color:var(--background-alt); margin: 2px; padding: 12px 10px 8px; display: inline; vertical-align: center; transition: 0.5s;}
+.sm img {height: 18px; width: 18px;}
+.sm-icons a {vertical-align: center; text-decoration: none;}
+.sm:hover {padding: 14px 12px 10px; margin: 0; transition: 0.5s; background-color:var(--text-color)}
 
-ul.sm-icons {margin: 32px 0;}
-.sm-icons li {vertical-align: center; display: inline-block}
-.sm-icons a {color:var(--main-color); vertical-align: center; text-decoration: none;}
-
-.sm:hover {padding: 14px 12px 10px; margin: 0; transition: .4s; background-color: #fff}
 .sm-twitter:hover {background-color: #00acee;}
 .sm-youtube:hover {background-color: #c4302b;}
 .sm-twitch:hover {background-color: #6441a5;}
@@ -104,4 +84,11 @@ ul.sm-icons {margin: 32px 0;}
 .sm-discord:hover {background-color: #5865F2;}
 .sm-patreon:hover {background-color: #f86752;}
 
-button h3 {margin:2px;}
+/* art gallery */
+.art-gallery {width: 100%}
+.piece {padding: 0px 2px 24px; width: 180px; height: 180px; display:inline-block; overflow: hidden; position: relative;}
+.piece img {width: auto; height: 90%; max-width: 98%; max-height: 98%; object-fit: contain}
+
+/* minecraft custom recipes */
+.recipes {display: none; background-color: var(--body-color); margin-top: 24px; padding: 8px 8px 8px 8px; width: 85%;}
+.recipes img {width: 30%; height: auto}

@@ -1,7 +1,5 @@
 from __main__ import app, flask, a
 
-# 		========================
-
 class gm():
 
 	redirect = "steam://connect/play.elisttm.space/chungus"
@@ -17,8 +15,10 @@ class gm():
 		"relevant maps": "https://steamcommunity.com/sharedfiles/filedetails/?id=2169587352",
 	}
 
-# 		========================
-
 @app.route('/gmod')
 def gmod(): 
 	return flask.render_template('gmod.html', gm = gm(), a = a)
+
+@app.route('/gmodsrv')
+def redirect_gmod(): 
+	return flask.render_template('extra/redirect.html', redirect_url = gm().redirect, og_title = 'gmod server redirect', og_desc = 'redirects to my gmod server', a = a)

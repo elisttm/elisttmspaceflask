@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block page_title %}gmod server{% endblock %}
+{% block title %}gmod server{% endblock %}
 {% block og_title %}garrys mod server{% endblock %}
 {% block og_desc %}my awesome garrys mod server{% endblock %}
 
@@ -9,20 +9,19 @@
   <h1>garrys mod server</h1>
 		<p>a private gmod server that i host from time to time</p>
 		
-		<button onclick="window.open('{{ gm.redirect }}')">   server redirect   </button>
+		<button onclick="window.open('{{ gm.redirect }}')">server redirect</button>
 
-	<div class="row"><div class="column">
+	<div class="row">
+	<div class="column">
 		<h2>server rules</h2>
 			<div class="list" width="100%"><ul class="list">
 				{% for rule in gm.rules %}<li>{{ rule }}</li>
-			{% endfor %}</ul></div>
+			{% endfor %}</ul></div></div>
 
-	</div><div class="column">
+	<div class="column">
 		<h2>server workshop collections</h2>
 			<div class="list" width="100%"><ul class="list">
 				{% for collection, url in gm.collections.items() %}<li><a href="{{ url }}">{{ collection }}</a></li>
 			{% endfor %}</ul></div>
-
-	</div></div>
-
+	</div>
 {% endblock %}

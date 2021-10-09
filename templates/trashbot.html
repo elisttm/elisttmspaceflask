@@ -1,36 +1,29 @@
 {% extends "base.html" %}
 
-{% block page_title %}trashbot{% endblock %}
+{% block title %}trashbot{% endblock %}
 {% block og_title %}trashbot{% endblock %}
 {% block og_desc %}my cool discord bot{% endblock %}
 
 {% block content %}
 
-  <h1>trashbot</h1>
-    <p>trashbot is a multipurpose discord bot developed by me intended for use in small servers
-		</p>
-
-	<button onclick="window.open('{{ tb.invite }}')">invite to a server</button>
-	<button onclick="window.open('{{ tb.github }}')">source code</button>
-	<button onclick="window.open('{{ tb.cmds }}')">list of commands</button>
-	<button onclick="window.open('{{ tb.tags }}')">list of tags</button>
-
-	<br><br>
+	<h1>trashbot</h1>
+		<p>trashbot is a multipurpose discord bot developed by me intended for use in small servers</p><br>
+		{% for button in tb.buttons %}
+		<a class="btn" href="{{ button[0] }}">{{ button[1] }}</a>{% endfor %}
 		
-	<div class="row"><div class="column">
+	<br><br><div class="row">
 
+	<div class="column">
 		<h2>what features does it have?</h2>
-			<div class="list" width="100%"><ul class="list">
-				{% for feature in tb.features %}<li>{{ feature }}</li>
-			{% endfor %}</ul></div>
+			<div class="list"><ul>{% for feature in tb.features %}
+				<li>{{ feature }}</li>{% endfor %}
+			</ul></div></div>
 
-	</div><div class="column">
-		
-		<h2>planned/possible features</h2>
-			<div class="list" width="100%"><ul class="list">
-				{% for p_feature in tb.planned %}<li>{{ p_feature }}</li>
-			{% endfor %}</ul></div>
-
-	</div></div>
-
+	<div class="column">
+		<h2>planned features</h2>
+			<div class="list"><ul>{% for p_feature in tb.planned %}
+				<li>{{ p_feature }}</li>{% endfor %}
+			</ul></div></div>
+	
+	</div>
 {% endblock %}

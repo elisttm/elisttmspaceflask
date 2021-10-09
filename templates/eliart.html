@@ -1,26 +1,19 @@
 {% extends "base.html" %}
 
-{% block page_title %}art gallery{% endblock %}
+{% block title %}eli gallery{% endblock %}
 {% block og_title %}eli art gallery{% endblock %}
 {% block og_desc %}art gallery filled with many elis{% endblock %}
 
 {% block content %}
 
 	<h1>art of eli :D</h1>
-		<p>this is not absolutely every piece i have! if your art is in this gallery and you wish to have it removed, please do not hestitate to contact me! 
-		<br>click an image to open it in full resolution, artists are credited and linked to if possible!</p>
-		{% if sorted_ %}<p>to go back to normal sorting, click <a href="https://elisttm.space/eli/art">here</a>!<p>{% else %}<p>to sort images by new, click <a href="https://elisttm.space/eli/art/newest">here</a>!<p>{% endif %}
+		<p>this is not every piece i have; if yours isnt here its nothing personal! if youd like to have your own art removed, contact me! 
+		<br>click images to open them in full quality; artists are credited and all relevant links are given if possible
+		<br><span style="font-size:12px">last updated {{ eli.lastupdate_art }}</span></p>
+		{% if sort == "new" %}<p>to go back to normal sorting, click <a href="/eli/art">here</a>!<p>{% else %}<p>to sort images by new, click <a href="/eli/art?s=new">here</a>!<p>{% endif %}
 
-	<div style="center">
-	{% for piece in art %}
-		<div class="gallery">
-			<a target="_blank" href="/static/eli/{{ piece[0] }}"><img src="/static/eli/{{ piece[0] }}" alt="art by {{ piece[2] }}" width="auto" height="100px"></a>
-			<div class="desc">by {% if piece[3] %}<a target="_blank" href="{{ piece[3] }}">{% endif %}{{ piece[2] }}</a>{% if piece[4] %} | <a target="_blank" href="{{ piece[4] }}">post</a>{% endif %}<br><span style="font-size:12px">{{ piece[1] }}</span></div>
-		</div>
-	{% endfor %}
-	</div>
-
-</body>
-</html>
-
+	<div class="art-gallery">
+		{% for piece in art %}<div class="piece"><a target="_blank" href="/{{ eliart.path }}{{ piece[0] }}"><img src="/{{ eliart.cpath }}COMPRESSED_{{ piece[0][:-4] }}.jpg" alt="art by {{ piece[2] }}" width="auto" height="100px"></a>
+			<div>by {% if piece[3] %}<a target="_blank" href="{{ piece[3] }}">{% endif %}{{ piece[2] }}</a>{% if piece[4] %}&nbsp;&nbsp;<a target="_blank" href="{{ piece[4] }}">[post]</a>{% endif %}<br><span style="font-size:12px">{{ piece[1] }}</span></div>
+		</div>{% endfor %}</div>
 {% endblock %}

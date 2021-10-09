@@ -1,28 +1,32 @@
 {% extends "base.html" %}
 
-{% block page_title %}eli{% endblock %}
+{% block title %}eli{% endblock %}
 {% block og_title %}eli{% endblock %}
 {% block og_desc %}my swag fursona{% endblock %}
+{% block head %}
+	<meta property="og:image" content="{{ eli.dir }}ref.png"/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:width" content="802"/>
+	<meta property="og:image:height" content="696"/>
+	<meta name="twitter:card" content="summary_large_image">
+{% endblock %}
 
 {% block content %}
 
   <h1>my fursona</h1>
 
-	<div class="row"><div class="column" style="padding-right:0%">
+	<div class="row">
+	<div class="column">
+		<img src="{{ eli.dir }}ref.png" alt="eli cat ref sheet" style="max-width:100%;width:75vw;"/>
+		<h4>last updated {{ eli.lastupdate_ref }}</h4>
+	</div>
 
-	<img src="/static/images/ref.png" alt="eli reference" width="80%"/>
-
-	</div><div class="column">
-
-			<div class="list" width="100%" style="font-size:130%"><ul class="list">
-				{% for info in eli.info %}<li>{{ info }}</li>
-			{% endfor %}</ul></div>
-
-	<br><br>
-
-		<p>feel free to draw him anytime!</p>
-		<button onclick="window.location.href=('eli/art')"> eli art gallery </button-->
-
-	</div></div>
-
+	<div class="column">
+		<div class="list" style="font-size:130%"><ul>{% for info in eli.info %}
+			<li>{{ info }}</li>{% endfor %}
+		</ul></div>
+	<p>feel free to draw him anytime!</p>
+		<a class="btn" href="/eli/art">eli art gallery</a>
+	</div>
+	</div>
 {% endblock %}

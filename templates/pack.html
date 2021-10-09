@@ -1,33 +1,31 @@
 {% extends "base.html" %}
 
-{% block page_title %}eli pack{% endblock %}
+{% block title %}eli pack{% endblock %}
 {% block og_title %}eli pack{% endblock %}
 {% block og_desc %}my minecraft resource pack{% endblock %}
 
 {% block content %}
 
   <h1>eli pack</h1>
-    <p>this is my custom minecraft resource pack that changes a loottt of stuff (im not going make a list here)<br>compatible with either 1.8.9 or 1.17+</p>
+    <p>my custom resource pack that is a mix of content from other packs as well as stuff i made myself</p>
 
-	<div class="row"><div class="column">
+	<div class="row">
+	<div class="column">
+		<h2>current version: {{ mcpk.version }}</h2>
+		<h3>download links:</h3>
+			<a class="btn" href="{{ mcpk.download }}">1.17+</a>
+			<a class="btn" href="{{ mcpk.legacydownload }}">1.8.9 (legacy)</a>
 
-  <h2>current version: {{ mcpk.version }}</h2>
+		<h3 style="margin-top:20px">notes</h3>
+			<div class="list"><ul>
+				<li>installation is as simple as extracting the pack for the version you play in your resourcepacks folder</li>
+				<li>the legacy pack is not kept as up to date as the most recent version</li>
+				<li>if you encounter any bugs/have any suggestions with a pack, feel free to contact me!</li>
+			</ul></div>
+		</div>
 
-  <h3>download links:</h3>
-    <button onclick="window.open('{{ mcpk.download }}','_blank')">1.17+ full</button>
-    <button onclick="window.open('{{ mcpk.legacydownload }}','_blank')">1.8.9 legacy</button>
-
-	<h3>installation</h3>
-		<div class="list" width="100%"><ul class="list">
-			<li>if you're using 1.8, download only the legacy pack and place it in your resource packs folder.</li>
-			<li>if you're using 1.17+, download only the 1.17 pack and place it in your resource packs folder.</li> 
-		</ul></div>
-
-	</div><div class="column">
-
-  <h2>changelog</h2>
-   <iframe src="/pack/changelog" style="border:1px;border-color:#333;width:100%;height:300px" name="pack changelog"></iframe>
-
+	<div class="column">
+		<h2>changelog</h2>
+			<iframe src="/pack/changelog" style="border:1px solid #fff;width:100%;height:300px" name="eli pack changelog"></iframe>
 	</div></div>
-
 {% endblock %}

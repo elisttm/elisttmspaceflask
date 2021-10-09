@@ -1,12 +1,8 @@
-# yeah
-TODO
-.env
-
-# annoying
+/static/images
+notes
+.replit
+.breakpoints
 **/__pycache__/
-
-# packager files
-package-lock.json
 poetry.lock
 pyproject.toml
 requirements.txt

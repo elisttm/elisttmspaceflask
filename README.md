@@ -1,3 +1,9 @@
-# elisttm.space (flask)
+# elisttm.space
 
-my website, the version that runs on pythons flask library. thats all there is to be said about it
+source code for [my website](https://elisttm.space/) that runs on the python flask library
+
+---
+
+*i very often make small updates to the website without committing them*
+
+*all media files are excluded from the repo*

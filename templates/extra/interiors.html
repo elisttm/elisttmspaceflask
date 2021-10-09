@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}interior design{% endblock %}
+{% block og_title %}eli's interior design{% endblock %}
+{% block og_desc %}my awesome interior design service{% endblock %}
+
+{% block head %}
+	<style>.interior {max-width:40%; height:auto}</style>{% endblock %}
+
+{% block content %}
+  <h1>eli's interior design</h1>
+
+		<h2>terms of service</h2>
+			<div class="list" width="100%"><ul class="list" style="padding:0">
+				{% for rule in interiors.rules %}<li>{{ rule }}</li>
+			{% endfor %}</ul></div>
+
+		<h2>examples from satisfied customers</h2>
+			{% for image in interiors.images %}<a target="_blank" href="{{ interiors.dir }}{{ image }}" ><img class="interior" src="{{ interiors.dir }}{{ image }}"></a>
+		{% endfor %}
+{% endblock %}
+
+

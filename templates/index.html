@@ -1,25 +1,21 @@
 {% extends "base.html" %}
 
-{% block page_title %}homepage{% endblock %}
 {% block og_title %}eli website{% endblock %}
 {% block og_desc %}funny{% endblock %}
 
 {% block head %}
-<meta name="keywords" content="{{ indx.keywords }}">
-{% endblock %}
+	<meta name="keywords" content="{{ indx.keywords }}">{% endblock %}
 
 {% block content %}
 
   <h1>welcome!</h1>
     {% for info_text in indx.info: %}
 		<p>{{ info_text }}</p>{% endfor %}
-		
-			<div class="sm-icons-list"><ul class="sm-icons">
-				{% for name, url in indx.sm_buttons.items() %}<li><a href="{{ url }}" target="_blank"> <i class="sm sm-{{ name }}"><img src="/static/images/logos/{{ name }}.svg"></i></a></li>
-				{% endfor %}
-			</ul></div>
+	
+		<div class="sm-icons">{% for social in indx.sm_buttons %}
+			<a href="{{ social[1] }}" target="_blank" class="sm sm-{{ social[0] }}"><img src="{{ indx.icon_dir }}{{ social[0] }}.svg" alt="{{ social[0] }}"></a>{% endfor %}
+		</div>
 
-			{% for path, label in indx.buttons.items(): %}
-			<button onclick="window.location.href=('{{ path }}')"><h3>{{ label['a'] }}</h3>{{ label['b'] }}<br></button>{% endfor %}
-
+		{% for button in indx.buttons: %}<button onclick="window.location.href=('{{ button[0] }}')"><span class="btn-header">{{ button[1] }}</span><br>{{ button[2] }}<br></button>
+		{% endfor %}
 {% endblock %}

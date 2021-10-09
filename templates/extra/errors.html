@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block meta_robots %}noindex, follow{% endblock %}
+{% block title %}{{ errors[e][0] }}{% endblock %}
+{% block og_title %}{{ errors[e][0] }}{% endblock %}
+{% block og_desc %}{{ errors[e][1] }}{% endblock %}
+
+{% block content %}
+
+	<h1>{{ errors[e][0] }}!</h1>
+	<h3>{{ errors[e][1] }}</h3>
+
+{% endblock %}
