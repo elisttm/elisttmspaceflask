@@ -34,13 +34,13 @@ class mc():
 		"custom recipes", 
 	)
 
-@app.route('/minecraft')
-def minecraft(): 
-	return flask.render_template('minecraft.html', mc = mc(), a = a)
-
-@app.route('/minecraft/upcheck')
-def upcheck(): 
-	text = 'the server is currently offline'
-	if get_mcstats()['online'] == True:
-		text = 'the server is currently online'
-	return f'<link rel="stylesheet" href="{a.css}" type="text/css"/><body class="content"><p align="center">{text}</p></body>' 
+#@app.route('/minecraft')
+#def minecraft(): 
+#	return flask.render_template('minecraft.html', mc = mc(), a = a)
+#
+#@app.route('/minecraft/upcheck')
+#def upcheck(): 
+#	text = 'the server is currently offline'
+#	if get_mcstats()['online'] == True:
+#		text = 'the server is currently online'
+#	return f'<link rel="stylesheet" href="{a.css}" type="text/css"/><body class="content"><p align="center">{text}</p></body>' 

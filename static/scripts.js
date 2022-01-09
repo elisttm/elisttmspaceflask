@@ -5,5 +5,5 @@ function toggleHead() {
 		x.className += " responsive";
 	} else {
 		x.className = "topnav";
-	}}
+}}
 
